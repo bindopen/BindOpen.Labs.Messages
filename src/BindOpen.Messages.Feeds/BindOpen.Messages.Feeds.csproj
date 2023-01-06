@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>BindOpen.Messages.Feeds</AssemblyName>
+    <PackageId>BindOpen.Messages.Feeds</PackageId>
+    <Product>BindOpen.Messages.Feeds</Product>
+    <Company>BindOpen</Company>
+    <Copyright>Copyright ©BindOpen 2011-2023</Copyright>
+    <Description>This package provides methods to easily deal with Feeds.</Description>
+    <Authors>Sumer Team</Authors>
+    <RootNamespace>BindOpen.Messages.Feeds</RootNamespace>
+    <PackageProjectUrl>https://github.com/bindopen/BindOpen.Messages.Feeds</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bindopen/BindOpen.Messages.Feeds.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>bindopen_icon.png</PackageIcon>
+    <PackageIconUrl>https://storage.bindopen.org/org/icons/bindopen_icon_64x64.png</PackageIconUrl>
+    <SignAssembly>true</SignAssembly>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>BindOpen.Messages.Feeds.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\docs\images\bindopen_icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\Readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="BindOpen.Extensions" Version="1.2.1" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<connectorDictionary library="Messages"
+  xmlns="http://www.w3.org/2001/dkm.xsd"
+  xmlns:SchemaLocation="dkm:ConnectorDictionary ConnectorDictionary.xsd"
+  >
+  
+  <creationDate>2014-07-13</creationDate>
+  <lastUpdateDate>2014-07-13</lastUpdateDate>
+  <connectorDefinitions>
+
+    <!-- pop3 -->
+    <connectorDefinition name="pop3">
+      <creationDate>2014-07-12</creationDate>
+      <lastUpdateDate>2014-07-12</lastUpdateDate>
+      <dataSourceKind>Repository</dataSourceKind>
+      <connectionParameterStatementClassName>pop3.ConnectionParameterStatement_Pop3</connectionParameterStatementClassName>
+      <isEditable>true</isEditable>
+      <title>
+        <values>
+          <add.value key="en">
+            <label>POP3</label>
+          </add.value>
+        </values>
+      </title>
+      <description>
+        <values>
+          <add.value key="en">
+            <label>POP3 connection.</label>
+          </add.value>
+        </values>
+      </description>
+    </connectorDefinition>
+
+    <!-- imap -->
+    <connectorDefinition name="imap">
+      <creationDate>2014-07-13</creationDate>
+      <lastUpdateDate>2014-07-13</lastUpdateDate>
+      <dataSourceKind>Repository</dataSourceKind>
+      <connectionParameterStatementClassName>imap.ConnectionParameterStatement_Imap</connectionParameterStatementClassName>
+      <isEditable>true</isEditable>
+      <title>
+        <values>
+          <add.value key="en">
+            <label>IMAP</label>
+          </add.value>
+        </values>
+      </title>
+      <description>
+        <values>
+          <add.value key="en">
+            <label>IMAP connection.</label>
+          </add.value>
+        </values>
+      </description>
+    </connectorDefinition>
+
+    <!-- smtp -->
+    <connectorDefinition name="smtp">
+      <creationDate>2014-07-13</creationDate>
+      <lastUpdateDate>2014-07-13</lastUpdateDate>
+      <dataSourceKind>Repository</dataSourceKind>
+      <connectionParameterStatementClassName>smtp.ConnectionParameterStatement_Smtp</connectionParameterStatementClassName>
+      <isEditable>true</isEditable>
+      <title>
+        <values>
+          <add.value key="en">
+            <label>SMTP</label>
+          </add.value>
+        </values>
+      </title>
+      <description>
+        <values>
+          <add.value key="en">
+            <label>SMTP connection.</label>
+          </add.value>
+        </values>
+      </description>
+    </connectorDefinition>
+
+  </connectorDefinitions>
+
+</connectorDictionary>

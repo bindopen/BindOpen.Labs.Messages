@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>BindOpenTests.Messages.Feeds</AssemblyName>
+    <PackageId>BindOpenTests.Messages.Feeds</PackageId>
+    <Product>BindOpenTests.Messages.Feeds</Product>
+    <Company>BindOpen</Company>
+    <Copyright>Copyright ©BindOpen 2011-2023</Copyright>
+    <Description>This package provides methods to easily deal with Feeds.</Description>
+    <Authors>Sumer Team</Authors>
+    <RootNamespace>BindOpenTests.Messages.Feeds</RootNamespace>
+    <PackageProjectUrl>https://github.com/bindopen/BindOpenTests.Messages.Feeds</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bindopen/BindOpenTests.Messages.Feeds.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>bindopen_icon.png</PackageIcon>
+    <PackageIconUrl>https://storage.bindopen.org/org/icons/bindopen_icon_64x64.png</PackageIconUrl>
+    <SignAssembly>true</SignAssembly>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>BindOpenTests.Messages.Feeds.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\docs\images\bindopen_icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\Readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.13.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\BindOpen.Messages.Feeds\BindOpen.Messages.Feeds.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="data\input\" />
+  </ItemGroup>
+
+</Project>
