@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using BindOpen.Messages.Feeds.Atom;
+using NUnit.Framework;
 
 namespace BindOpen.Tests.Messages
 {
@@ -7,7 +8,7 @@ namespace BindOpen.Tests.Messages
     {
         private readonly string _filePath = GlobalVariables.WorkingFolder + "Log.xml";
 
-        private dynamic _testData;
+        private string feedUri = GlobalVariables.StorageUri + "news/atom/releases.atom";
 
         [OneTimeSetUp]
         public void OneTimeSetUp()
@@ -17,6 +18,10 @@ namespace BindOpen.Tests.Messages
         [Test, Order(1)]
         public void LoadAtomFeedTest_Local()
         {
+            var feed = AtomFeedHandler.GetFeed(
+                feedUri,
+                titleMaxCharacterNumber: 25,
+                descriptionMaxCharacterNumber: 25);
         }
 
         [Test, Order(1)]

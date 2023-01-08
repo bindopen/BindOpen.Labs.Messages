@@ -3,13 +3,13 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>BindOpenTests.Messages.Feeds</AssemblyName>
-    <PackageId>BindOpenTests.Messages.Feeds</PackageId>
-    <Product>BindOpenTests.Messages.Feeds</Product>
+    <PackageId>BindOpenTests.Messages</PackageId>
+    <Product>BindOpen.Messages</Product>
     <Company>BindOpen</Company>
     <Copyright>Copyright ©BindOpen 2011-2023</Copyright>
     <Description>This package provides methods to easily deal with Feeds.</Description>
     <Authors>Sumer Team</Authors>
-    <RootNamespace>BindOpenTests.Messages.Feeds</RootNamespace>
+    <RootNamespace>BindOpenTests.Messages</RootNamespace>
     <PackageProjectUrl>https://github.com/bindopen/BindOpenTests.Messages.Feeds</PackageProjectUrl>
     <RepositoryUrl>https://github.com/bindopen/BindOpenTests.Messages.Feeds.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
