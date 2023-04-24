@@ -1,17 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <AssemblyName>BindOpen.Messages.Feeds</AssemblyName>
-    <PackageId>BindOpen.Messages.Feeds</PackageId>
-    <Product>BindOpen.Messages.Feeds</Product>
+    <TargetFramework>net7.0</TargetFramework>
+    <AssemblyName>BindOpen.Messages</AssemblyName>
+    <PackageId>BindOpen.Messages</PackageId>
+    <Product>BindOpen.Messages</Product>
     <Company>BindOpen</Company>
     <Copyright>Copyright ©BindOpen 2011-2023</Copyright>
-    <Description>This package provides methods to easily deal with Feeds.</Description>
+    <Description>This package provides methods to easily deal with emails.</Description>
     <Authors>Sumer Team</Authors>
-    <RootNamespace>BindOpen.Messages.Feeds</RootNamespace>
-    <PackageProjectUrl>https://github.com/bindopen/BindOpen.Messages.Feeds</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/bindopen/BindOpen.Messages.Feeds.git</RepositoryUrl>
+    <RootNamespace>BindOpen.Messages</RootNamespace>
+    <PackageProjectUrl>https://github.com/bindopen/BindOpen.Messages</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bindopen/BindOpen.Messages.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>bindopen_icon.png</PackageIcon>
@@ -21,7 +21,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>BindOpen.Messages.Feeds.xml</DocumentationFile>
+    <DocumentationFile>BindOpen.Messages.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -40,7 +40,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="BindOpen.Extensions" Version="1.2.1" />
+    <PackageReference Include="BindOpen.Extensions" Version="1.1.52" />
   </ItemGroup>
 
 </Project>

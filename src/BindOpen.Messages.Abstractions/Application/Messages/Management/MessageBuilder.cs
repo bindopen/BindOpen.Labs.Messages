@@ -1,10 +1,37 @@
-﻿namespace meltingSoft.Flow.Extensions.Messages.Application.Messages.Management
+﻿using BindOpen.Core.System.Script;
+
+namespace meltingSoft.Flow.Extensions.Messages.Application.Messages.Management
 {
     /// <summary>
     /// This class represents a builder of message.
     /// </summary>
     public class MessageBuilder
     {
+
+        // --------------------------------------
+        // ENUMERATIONS
+        // --------------------------------------
+
+        #region Enumerations
+
+        /// <summary>
+        /// This enumerates all the possible domains of a message.
+        /// </summary>
+        public enum MessageSettingsDomain
+        {
+            /// <summary>
+            /// Platform.
+            /// </summary>
+            Platform,
+            /// <summary>
+            /// Enterprise Content Management.
+            /// </summary>
+            ECM
+        };
+
+        #endregion
+
+        
         // --------------------------------------
         // VARIABLES
         // --------------------------------------
@@ -14,6 +41,7 @@
         private ScriptInterpreter _ScriptInterpreter;
 
         #endregion
+
 
         // --------------------------------------
         // CONSTRUCTORS
@@ -31,6 +59,7 @@
         }
 
         #endregion
+
 
         // --------------------------------------
         // BUILD
@@ -184,5 +213,6 @@
 
 
         #endregion
+
     }
 }
