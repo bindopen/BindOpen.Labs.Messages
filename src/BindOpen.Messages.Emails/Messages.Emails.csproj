@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <AssemblyName>BindOpen.Messages.Emails</AssemblyName>
     <PackageId>BindOpen.Messages.Emails</PackageId>
     <Product>BindOpen.Messages.Emails</Product>

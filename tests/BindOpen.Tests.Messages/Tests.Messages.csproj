@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <AssemblyName>BindOpenTests.Messages.Feeds</AssemblyName>
     <PackageId>BindOpenTests.Messages</PackageId>
     <Product>BindOpen.Messages</Product>
@@ -44,11 +44,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\BindOpen.Messages.Feeds\BindOpen.Messages.Feeds.csproj" />
+    <Folder Include="data\input\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="data\input\" />
+    <ProjectReference Include="..\..\src\BindOpen.Messages.Feeds\Messages.Feeds.csproj" />
   </ItemGroup>
 
 </Project>
