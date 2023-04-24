@@ -1,11 +1,4 @@
-﻿using BindOpen.Extensions.Modeling;
-using System.Collections.Generic;
-using System.IO;
-using System.Xml;
-using System.Xml.Linq;
-using System.Xml.Serialization;
-
-namespace BindOpen.Messages.Emails.Carriers
+﻿namespace BindOpen.Messages.Emails._Common
 {
     /// <summary>
     /// This class represents the email.

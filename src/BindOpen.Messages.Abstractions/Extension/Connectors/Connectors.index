@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<connectors.index library="messages"
+  xmlns="https://docs.bindopen.org/xsd"
+  xmlns:SchemaLocation="bdo:ConnectorIndex ConnectorIndex.xsd">
+
+  <creationDate>2014-07-12</creationDate>
+  <lastModificationDate>2016-09-10</lastModificationDate>
+  <definitions>
+
+    <!-- smtp -->
+    <add.definition name="smtp">
+      <creationDate>2014-07-12</creationDate>
+      <lastModificationDate>2016-11-25</lastModificationDate>
+      <title>
+        <add.value>SMTP</add.value>
+      </title>
+      <description>
+        <add.value>SMTP connector.</add.value>
+      </description>
+      <itemClass>.Connectors.smtp.EmailConnector_Smtp</itemClass>
+      <dataSource.specification>
+        <detail.specification>
+          <scalar name="host" valueType="Text">
+            <title>
+              <add.value>Host</add.value>
+            </title>
+          </scalar>
+          <scalar name="login" valueType="Text">
+            <title>
+              <add.value>Login</add.value>
+            </title>
+          </scalar>
+          <scalar name="password" valueType="Text">
+            <title>
+              <add.value>Password</add.value>
+            </title>
+          </scalar>
+          <scalar name="port" valueType="Integer">
+            <title>
+              <add.value>Port</add.value>
+            </title>
+          </scalar>
+          <scalar name="isSslEnabled" valueType="Boolean">
+            <title>
+              <add.value>IsSslEnabled</add.value>
+            </title>
+          </scalar>
+          <scalar name="isDefaultCredentialsUsed" valueType="Boolean">
+            <title>
+              <add.value>IsDefaultCredentialsUsed</add.value>
+            </title>
+          </scalar>
+          <scalar name="timeout" valueType="Integer">
+            <title>
+              <add.value>Timeout</add.value>
+            </title>
+          </scalar>
+        </detail.specification>
+        <kind>EmailServer</kind>
+      </dataSource.specification>
+    </add.definition>
+
+    <!-- fileRemote --><!--
+    <add.definition name="fileRemote">
+      <creationDate>2014-07-13</creationDate>
+      <lastModificationDate>2016-08-24</lastModificationDate>
+      <title>
+        <values>
+          <add.value>Remote file</add.value>
+        </values>
+      </title>
+      <description>
+        <values>
+          <add.value>Remote file.</add.value>
+        </values>
+      </description>
+      <itemClass>.Connectors.fileRemote.DataSource_FileRemote</itemClass>
+      <dataSource>
+        <kind>Repository</kind>
+        <detail>
+          <specifications>
+            <scalar name="provider">
+              <title>
+                <values>
+                  <add.value>Provider</add.value>
+                </values>
+              </title>
+              <specification>
+                <valueType>Text</valueType>
+              </specification>
+            </scalar>
+          </specifications>
+        </detail>
+      </dataSource>
+    </add.definition>-->
+
+    <!-- ftp --><!--
+    <add.definition name="ftp">
+      <creationDate>2014-07-13</creationDate>
+      <lastModificationDate>2016-08-24</lastModificationDate>
+      <title>
+        <values>
+          <add.value>FTP</add.value>
+        </values>
+      </title>
+      <description>
+        <values>
+          <add.value>File Transfer Protocole file.</add.value>
+        </values>
+      </description>
+      <itemClass>.Connectors.ftp.DataSource_Ftp</itemClass>
+      <dataSource>
+        <kind>Repository</kind>
+        <detail>
+          <specifications>
+            <scalar name="provider">
+              <title>
+                <values>
+                  <add.value>Provider</add.value>
+                </values>
+              </title>
+              <specification>
+                <valueType>Text</valueType>
+              </specification>
+            </scalar>
+          </specifications>
+        </detail>
+      </dataSource>
+    </add.definition>
+
+    --><!-- scp --><!--
+    <add.definition name="scp">
+      <creationDate>2014-07-13</creationDate>
+      <lastModificationDate>2016-08-24</lastModificationDate>
+      <title>
+        <values>
+          <add.value>SCP</add.value>
+        </values>
+      </title>
+      <description>
+        <values>
+          <add.value>SCP connection.</add.value>
+        </values>
+      </description>
+      <itemClass>.Connectors.scp.DataSource_Scp</itemClass>
+      <dataSource>
+        <kind>Repository</kind>
+        <detail>
+          <specifications>
+            <scalar name="provider">
+              <title>
+                <values>
+                  <add.value>Provider</add.value>
+                </values>
+              </title>
+              <specification>
+                <valueType>Text</valueType>
+              </specification>
+            </scalar>
+          </specifications>
+        </detail>
+      </dataSource>
+    </add.definition>
+
+    --><!-- sftp --><!--
+    <add.definition name="sftp">
+      <creationDate>2014-07-13</creationDate>
+      <lastModificationDate>2016-08-24</lastModificationDate>
+      <title>
+        <values>
+          <add.value>SFTP</add.value>
+        </values>
+      </title>
+      <description>
+        <values>
+          <add.value>Secure File Transfer Protocole connection.</add.value>
+        </values>
+      </description>
+      <itemClass>.Connectors.sftp.DataSource_SFtp</itemClass>
+      <dataSource>
+        <kind>Repository</kind>
+        <detail>
+          <specifications>
+            <scalar name="provider">
+              <title>
+                <values>
+                  <add.value>Provider</add.value>
+                </values>
+              </title>
+              <specification>
+                <valueType>Text</valueType>
+              </specification>
+            </scalar>
+          </specifications>
+        </detail>
+      </dataSource>
+    </add.definition>-->
+  </definitions>
+
+</connectors.index>

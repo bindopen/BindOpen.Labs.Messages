@@ -1,4 +1,5 @@
 ﻿using BindOpen.Data;
+using BindOpen.Data.Helpers;
 using System;
 using System.Xml.Serialization;
 
