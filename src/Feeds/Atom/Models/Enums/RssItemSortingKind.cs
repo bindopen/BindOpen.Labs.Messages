@@ -1,4 +1,4 @@
-﻿namespace BindOpen.Messages.Feeds.Atom
+﻿namespace BindOpen.Labs.Messages.Feeds.Atom
 {
     /// <summary>
     /// This enumeration lists all the possible kinds of RSS item sorting.

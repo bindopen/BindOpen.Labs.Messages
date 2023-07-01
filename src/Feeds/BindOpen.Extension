@@ -8,9 +8,9 @@
   <description>
     <add.value key="en">Extension library 'Messages'.</add.value>
   </description>
-  <assembly>BindOpen.Messages</assembly>
-  <fileName>BindOpen.Messages.dll</fileName>
-  <rootNamespace>BindOpen.Messages.Extensions</rootNamespace>
+  <assembly>BindOpen.Labs.Messages</assembly>
+  <fileName>BindOpen.Labs.Messages.dll</fileName>
+  <rootNamespace>BindOpen.Labs.Messages.Extensions</rootNamespace>
   <indexes>
     <add.value key="connector">.Connectors.Connectors.index</add.value>
     <add.value key="scriptword">.Scriptwords.Scriptwords.index</add.value>

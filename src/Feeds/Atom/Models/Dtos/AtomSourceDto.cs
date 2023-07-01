@@ -2,7 +2,7 @@
 using System;
 using System.Xml.Serialization;
 
-namespace BindOpen.Messages.Feeds.Atom
+namespace BindOpen.Labs.Messages.Feeds.Atom
 {
     /// <summary>
     /// This class represents an Atom source.

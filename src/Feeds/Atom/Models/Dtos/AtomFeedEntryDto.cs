@@ -1,18 +1,18 @@
 ﻿using BindOpen.Data;
 using BindOpen.Data.Helpers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Xml.Serialization;
 
-namespace BindOpen.Messages.Feeds.Atom
+namespace BindOpen.Labs.Messages.Feeds.Atom
 {
     /// <summary>
-    /// This class represents a Feed channel.
+    /// This class represents a Atom feed entry.
     /// </summary>
-    [XmlType("AtomFeed", Namespace = "http://www.w3.org/2005/Atom")]
-    [XmlRoot("feed", Namespace = "http://www.w3.org/2005/Atom", IsNullable = false)]
-    public class AtomFeedDto : IBdoDto, IIdentified, IReferenced
+    [XmlType("AtomFeedEntry", Namespace = "http://www.w3.org/2005/Atom")]
+    public class AtomFeedEntryDto :
+        IBdoDto,
+        IIdentified, IReferenced,
+        INamed, IDescribed
     {
         // ------------------------------------------
         // PROPERTIES
@@ -27,53 +27,52 @@ namespace BindOpen.Messages.Feeds.Atom
         public string Id { get; set; }
 
         /// <summary>
+        /// Name of this instance.
+        /// </summary>
+        [XmlElement("name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Specification of the Name property of this instance.
+        /// </summary>
+        [XmlIgnore()]
+        public bool NameSpecified => !string.IsNullOrEmpty(Title);
+
+        /// <summary>
         /// Title of this instance.
         /// </summary>
         [XmlElement("title")]
         public string Title { get; set; }
 
         /// <summary>
+        /// Specification of the Title property of this instance.
+        /// </summary>
+        [XmlIgnore()]
+        public bool TitleSpecified => !string.IsNullOrEmpty(Title);
+
+        /// <summary>
+        /// Description of this instance.
+        /// </summary>
+        [XmlElement("description")]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Specification of the Description property of this instance.
+        /// </summary>
+        [XmlIgnore()]
+        public bool DescriptionSpecified => !string.IsNullOrEmpty(Title);
+
+        /// <summary>
+        /// Contributor of this instance.
+        /// </summary>
+        [XmlElement("published")]
+        public string PublicationDate { get; set; }
+
+        /// <summary>
         /// Last modification date of this instance.
         /// </summary>
         [XmlElement("updated")]
         public string LastModificationDate { get; set; } = null;
-
-        /// <summary>
-        /// Icon of this instance.
-        /// </summary>
-        [XmlElement("icon")]
-        public string Icon { get; set; }
-
-        /// <summary>
-        /// Specification of the Icon property of this instance.
-        /// </summary>
-        [XmlIgnore()]
-        public bool IconSpecified => !string.IsNullOrEmpty(Icon);
-
-        /// <summary>
-        /// Logo of this instance.
-        /// </summary>
-        [XmlElement("logo")]
-        public string Logo { get; set; }
-
-        /// <summary>
-        /// Specification of the Logo property of this instance.
-        /// </summary>
-        [XmlIgnore()]
-        public bool LogoSpecified => !string.IsNullOrEmpty(Logo);
-
-        /// <summary>
-        /// Entries of this instance.
-        /// </summary>
-        [XmlArray("entries")]
-        [XmlArrayItem("entry")]
-        public List<AtomFeedEntryDto> Entries { get; set; }
-
-        /// <summary>
-        /// Specification of the Entries property of this instance.
-        /// </summary>
-        [XmlIgnore()]
-        public bool EntriesSpecified => Entries != null && Entries.Count > 0;
 
         /// <summary>
         /// Author of this instance.
@@ -88,6 +87,18 @@ namespace BindOpen.Messages.Feeds.Atom
         public bool AuthorSpecified => Author != null;
 
         /// <summary>
+        /// Content of this instance.
+        /// </summary>
+        [XmlElement("content")]
+        public AtomContentDto Content { get; set; }
+
+        /// <summary>
+        /// Specification of the Content property of this instance.
+        /// </summary>
+        [XmlIgnore()]
+        public bool ContentSpecified => Content != null;
+
+        /// <summary>
         /// Link of this instance.
         /// </summary>
         [XmlElement("link")]
@@ -98,6 +109,18 @@ namespace BindOpen.Messages.Feeds.Atom
         /// </summary>
         [XmlIgnore()]
         public bool LinkSpecified => Link != null;
+
+        /// <summary>
+        /// Summary of this instance.
+        /// </summary>
+        [XmlElement("summary")]
+        public AtomTextDto Summary { get; set; }
+
+        /// <summary>
+        /// Specification of the Summary property of this instance.
+        /// </summary>
+        [XmlIgnore()]
+        public bool SummarySpecified => Summary != null;
 
         /// <summary>
         /// Category of this instance.
@@ -124,18 +147,6 @@ namespace BindOpen.Messages.Feeds.Atom
         public bool ContributorSpecified => Contributor != null;
 
         /// <summary>
-        /// Generator of this instance.
-        /// </summary>
-        [XmlElement("generator")]
-        public AtomGeneratorDto Generator { get; set; }
-
-        /// <summary>
-        /// Specification of the Generator property of this instance.
-        /// </summary>
-        [XmlIgnore()]
-        public bool GeneratorSpecified => Generator != null;
-
-        /// <summary>
         /// Logo of this instance.
         /// </summary>
         [XmlElement("rights")]
@@ -148,16 +159,16 @@ namespace BindOpen.Messages.Feeds.Atom
         public bool RightsSpecified => Rights != null;
 
         /// <summary>
-        /// Sub title of this instance.
+        /// Source of this instance.
         /// </summary>
-        [XmlElement("subtitle")]
-        public AtomTextDto SubTitle { get; set; }
+        [XmlElement("source")]
+        public AtomSourceDto Source { get; set; }
 
         /// <summary>
-        /// Specification of the SubTitle property of this instance.
+        /// Specification of the Source property of this instance.
         /// </summary>
         [XmlIgnore()]
-        public bool SubTitleSpecified => SubTitle != null;
+        public bool SourceSpecified => Source != null;
 
         #endregion
 
@@ -168,29 +179,25 @@ namespace BindOpen.Messages.Feeds.Atom
         #region Constructors
 
         /// <summary>
-        /// Creates a new instance of the AtomFeed class.
+        /// Creates a new instance of the AtomFeedEntry class.
         /// </summary>
-        public AtomFeedDto()
+        public AtomFeedEntryDto()
         {
         }
 
         /// <summary>
-        /// Creates a new instance of the AtomFeed class.
+        /// Creates a new instance of the AtomFeedEntry class.
         /// </summary>
-        /// <param name="id">The ID to consider.</param>
-        /// <param name="title">The title to consider.</param>
-        /// <param name="lastModificationDate">The last modification date to consider.</param>
-        /// <param name="entries">The entry items to consider.</param>
-        public AtomFeedDto(
+        public AtomFeedEntryDto(
             string id,
             string title,
             DateTime? lastModificationDate = null,
-            params AtomFeedEntryDto[] entries)
+            DateTime? publicationDate = null)
         {
             Id = id;
             Title = title;
             LastModificationDate = StringHelper.ToString(lastModificationDate ?? (DateTime?)DateTime.Now);
-            Entries = entries?.ToList();
+            PublicationDate = StringHelper.ToString(publicationDate ?? (DateTime?)DateTime.Now);
         }
 
         #endregion

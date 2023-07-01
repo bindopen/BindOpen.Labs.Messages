@@ -1,4 +1,4 @@
-﻿using BindOpen.Messages.Feeds.Atom;
+﻿using BindOpen.Labs.Messages.Feeds.Atom;
 using NUnit.Framework;
 
 namespace BindOpen.Tests.Messages

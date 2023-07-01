@@ -1,13 +1,14 @@
 ﻿using BindOpen.Data;
+using System.ComponentModel;
 using System.Xml.Serialization;
 
-namespace BindOpen.Messages.Feeds.Atom
+namespace BindOpen.Labs.Messages.Feeds.Atom
 {
     /// <summary>
-    /// This class represents a Atom content.
+    /// This class represents an Atom text.
     /// </summary>
-    [XmlType("AtomContent", Namespace = "http://www.w3.org/2005/Atom")]
-    public class AtomContentDto : IBdoDto
+    [XmlType("AtomText", Namespace = "http://www.w3.org/2005/Atom")]
+    public class AtomTextDto : IBdoDto
     {
         // ------------------------------------------
         // PROPERTIES
@@ -16,28 +17,17 @@ namespace BindOpen.Messages.Feeds.Atom
         #region Properties
 
         /// <summary>
-        /// Source of this instance.
-        /// </summary>
-        [XmlAttribute("src")]
-        public string Source { get; set; }
-
-        /// <summary>
-        /// Specification of the Source property of this instance.
-        /// </summary>
-        [XmlIgnore()]
-        public bool SourceSpecified => !string.IsNullOrEmpty(Source);
-
-        /// <summary>
         /// Type of this instance.
         /// </summary>
         [XmlAttribute("type")]
-        public string Type { get; set; } = null;
+        [DefaultValue(AtomTextType.text)]
+        public AtomTextType Type { get; set; } = AtomTextType.text;
 
         /// <summary>
         /// Specification of the Type property of this instance.
         /// </summary>
         [XmlIgnore()]
-        public bool TypeSpecified => !string.IsNullOrEmpty(Type);
+        public bool TypeSpecified => Type != AtomTextType.text;
 
         /// <summary>
         /// Value of this instance.
@@ -60,19 +50,17 @@ namespace BindOpen.Messages.Feeds.Atom
         #region Constructors
 
         /// <summary>
-        /// Creates a new instance of the AtomContent class.
+        /// Creates a new instance of the AtomText class.
         /// </summary>
-        public AtomContentDto()
+        public AtomTextDto()
         {
         }
 
         /// <summary>
-        /// Creates a new instance of the AtomContent class.
+        /// Creates a new instance of the AtomText class.
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="value"></param>
-        public AtomContentDto(
-            string type,
+        public AtomTextDto(
+            AtomTextType type,
             string value)
         {
             Type = type;
