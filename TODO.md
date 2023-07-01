@@ -1,4 +1,4 @@
-Todo list for BindOpen.Messages
+Todo list for BindOpen.Labs.Messages
 ====
 
 ## Next tasks
@@ -24,4 +24,3 @@ Todo list for BindOpen.Messages
 ### v.1.1
 
 * Instantiate host with AddBindOpen method
-

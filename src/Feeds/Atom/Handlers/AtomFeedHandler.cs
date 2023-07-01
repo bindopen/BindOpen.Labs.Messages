@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace BindOpen.Messages.Feeds.Atom
+namespace BindOpen.Labs.Messages.Feeds.Atom
 {
     /// <summary>
     /// This class represents a RSS loader.
@@ -75,8 +75,7 @@ namespace BindOpen.Messages.Feeds.Atom
                                 itemTransformer?.Invoke(items);
                             }
 
-                            feed.Entries = items.Select(p =>
-                                p.ToFeedEntry()).ToList();
+                            feed.Entries = items.Select(p => p.ToFeedEntry()).ToList();
                         }
                     }
                 }
