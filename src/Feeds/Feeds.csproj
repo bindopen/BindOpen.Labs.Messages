@@ -40,7 +40,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="BindOpen.Extensions" Version="1.2.37" />
+    <PackageReference Include="BindOpen.System.Scoping.Extensions" Version="1.2.78" />
   </ItemGroup>
 
 </Project>
