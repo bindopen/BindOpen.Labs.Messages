@@ -1,6 +1,6 @@
-﻿using BindOpen.Data;
-using BindOpen.Data.Helpers;
-using BindOpen.Logging;
+﻿using BindOpen.System.Data;
+using BindOpen.System.Data.Helpers;
+using BindOpen.System.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
