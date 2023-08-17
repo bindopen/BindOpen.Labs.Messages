@@ -1,5 +1,4 @@
-﻿using BindOpen.Data;
-using BindOpen.Data.Helpers;
+﻿using BindOpen.System.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -189,7 +188,7 @@ namespace BindOpen.Labs.Messages.Feeds.Atom
         {
             Id = id;
             Title = title;
-            LastModificationDate = StringHelper.ToString(lastModificationDate ?? (DateTime?)DateTime.Now);
+            LastModificationDate = (lastModificationDate ?? (DateTime?)DateTime.Now).ToString();
             Entries = entries?.ToList();
         }
 
