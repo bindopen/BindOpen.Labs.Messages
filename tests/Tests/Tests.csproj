@@ -7,7 +7,7 @@
     <Product>BindOpen.Labs.Messages</Product>
     <Company>BindOpen</Company>
     <Copyright>Copyright ©BindOpen 2011-2023</Copyright>
-    <Description>This package provides methods to easily deal with Feeds.</Description>
+    <Description>This package conducts unit tests of BindOpen.Labs.Messages.</Description>
     <Authors>Sumer Team</Authors>
     <RootNamespace>BindOpenTests.Messages</RootNamespace>
     <PackageProjectUrl>https://github.com/bindopen/BindOpenTests.Messages.Feeds</PackageProjectUrl>
