@@ -7,7 +7,7 @@
     <Product>BindOpen.Labs.Messages.Feeds</Product>
     <Company>BindOpen</Company>
     <Copyright>Copyright ©BindOpen 2011-2023</Copyright>
-    <Description>This package provides methods to easily deal with Feeds.</Description>
+    <Description>A package to easily deal with feeds.</Description>
     <Authors>Sumer Team</Authors>
     <RootNamespace>BindOpen.Labs.Messages.Feeds</RootNamespace>
     <PackageProjectUrl>https://github.com/bindopen/BindOpen.Labs.Messages.Feeds</PackageProjectUrl>
@@ -40,7 +40,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="BindOpen.System.Scoping.Extensions" Version="1.2.78" />
+    <PackageReference Include="BindOpen.System.Scoping.Extensions" Version="1.2.93" />
   </ItemGroup>
 
 </Project>
