@@ -1,4 +1,4 @@
-﻿using BindOpen.System.Data.Helpers;
+﻿using BindOpen.Kernel.Data.Helpers;
 
 namespace BindOpen.Tests.Messages
 {

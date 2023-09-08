@@ -16,9 +16,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{63F8E67D-05FF-4088-9650-F37FBDE05017}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messages.Feeds", "src\Feeds\Feeds.csproj", "{98D32370-6BDA-4559-99A4-09D30B66B68B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Feeds", "src\Feeds\Feeds.csproj", "{98D32370-6BDA-4559-99A4-09D30B66B68B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.Messages", "tests\Tests\Tests.csproj", "{C80E0D36-E6E7-4C06-9040-5E242E857184}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "tests\Tests\Tests.csproj", "{C80E0D36-E6E7-4C06-9040-5E242E857184}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
