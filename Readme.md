@@ -32,7 +32,7 @@ Note: We recommend that later on, you install only the package you need.
 
 | Module | Instruction |
 |--------|-----|
-| [BindOpen.Kernel.Data](https://www.nuget.org/packages/BindOpen.Kernel.Data) | ```PM> Install-Package BindOpen.Kernel.Data``` |
+| [BindOpen.Kernel](https://www.nuget.org/packages/BindOpen.Kernel) | ```PM> Install-Package BindOpen.Kernel``` |
 | [BindOpen.Kernel.Scoping](https://www.nuget.org/packages/BindOpen.Kernel.Scoping) | ```PM> Install-Package BindOpen.Kernel.Scoping``` |
 | [BindOpen.Kernel.IO](https://www.nuget.org/packages/BindOpen.Kernel.IO) | ```PM> Install-Package BindOpen.Kernel.IO``` |
 
@@ -40,7 +40,7 @@ Note: We recommend that later on, you install only the package you need.
 
 | Module | Instruction |
 |--------|-----|
-| [BindOpen.Kernel.Data](https://www.nuget.org/packages/BindOpen.Kernel.Data) | ```> dotnet add package BindOpen.Kernel.Data``` |
+| [BindOpen.Kernel](https://www.nuget.org/packages/BindOpen.Kernel) | ```> dotnet add package BindOpen.Kernel``` |
 | [BindOpen.Kernel.Scoping](https://www.nuget.org/packages/BindOpen.Kernel.Scoping) | ```> dotnet add package BindOpen.Kernel.Scoping``` |
 | [BindOpen.Kernel.IO](https://www.nuget.org/packages/BindOpen.Kernel.IO) | ```> dotnet add package BindOpen.Kernel.IO``` |
 
@@ -172,7 +172,7 @@ This repository contains the code of the following Nuget packages:
 | Package | Provision |
 |----------|-----|
 | [BindOpen.Kernel.Abstractions](https://www.nuget.org/packages/BindOpen.Kernel.Abstractions) | Interfaces and enumerations |
-| [BindOpen.Kernel.Data](https://www.nuget.org/packages/BindOpen.Kernel.Data) | Core data model |
+| [BindOpen.Kernel](https://www.nuget.org/packages/BindOpen.Kernel) | Core data model |
 | [BindOpen.Kernel.Scoping](https://www.nuget.org/packages/BindOpen.Kernel.Scoping) | Extension manager |
 | [BindOpen.Kernel.Scoping.Extensions](https://www.nuget.org/packages/BindOpen.Kernel.Scoping.Extensions) | Classes of extensions |
 | [BindOpen.Kernel.Scoping.Script](https://www.nuget.org/packages/BindOpen.Kernel.Scoping.Script) | Script interpreter |

@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <AssemblyName>BindOpen.Labs.Messages.Feeds</AssemblyName>
-    <PackageId>BindOpen.Labs.Messages.Feeds</PackageId>
+    <AssemblyName>BindOpen.Labs.Messages.IO.Dtos</AssemblyName>
+    <PackageId>BindOpen.Labs.Messages.IO.Dtos</PackageId>
     <Product>BindOpen.Labs.Messages</Product>
     <Company>BindOpen</Company>
     <Copyright>Copyright ©BindOpen 2011-2023</Copyright>
@@ -21,7 +21,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>BindOpen.Labs.Messages.Feeds.xml</DocumentationFile>
+    <DocumentationFile>BindOpen.Labs.Messages.IO.Dtos.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -38,10 +38,14 @@
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
-
+  
+  <ItemGroup>
+    <PackageReference Include="BindOpen.Kernel.IO.Dtos" Version="1.2.96" />
+    <PackageReference Include="MTT" Version="0.7.2" />
+  </ItemGroup>
+  
   <ItemGroup>
     <ProjectReference Include="..\Abstractions\Abstractions.csproj" />
-    <ProjectReference Include="..\IO.Dtos\IO.Dtos.csproj" />
   </ItemGroup>
 
 </Project>
