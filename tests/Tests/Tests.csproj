@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <AssemblyName>BindOpenTests.Messages.Feeds</AssemblyName>
-    <PackageId>BindOpenTests.Messages</PackageId>
+    <AssemblyName>BindOpen.Labs.Messages.Tests</AssemblyName>
+    <PackageId>BindOpen.Labs.Messages.Tests</PackageId>
     <Product>BindOpen.Labs.Messages</Product>
     <Company>BindOpen</Company>
     <Copyright>Copyright ©BindOpen 2011-2023</Copyright>
@@ -44,10 +44,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="data\input\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\..\src\Email\Email.csproj" />
     <ProjectReference Include="..\..\src\Feeds\Feeds.csproj" />
   </ItemGroup>
 
