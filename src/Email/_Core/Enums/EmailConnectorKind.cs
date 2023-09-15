@@ -1,4 +1,4 @@
-﻿namespace BindOpen.Labs.Messages.Email
+﻿namespace BindOpen.Plus.Messages.Email
 {
     /// <summary>
     /// This enumeration lists all the possible kinds of email connectors.

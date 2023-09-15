@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <AssemblyName>BindOpen.Labs.Messages.Tests</AssemblyName>
-    <PackageId>BindOpen.Labs.Messages.Tests</PackageId>
-    <Product>BindOpen.Labs.Messages</Product>
+    <AssemblyName>BindOpen.Plus.Messages.Tests</AssemblyName>
+    <PackageId>BindOpen.Plus.Messages.Tests</PackageId>
+    <Product>BindOpen.Plus.Messages</Product>
     <Company>BindOpen</Company>
     <Copyright>Copyright ©BindOpen 2011-2023</Copyright>
-    <Description>This package conducts unit tests of BindOpen.Labs.Messages.</Description>
+    <Description>This package conducts unit tests of BindOpen.Plus.Messages.</Description>
     <Authors>Sumer Team</Authors>
     <RootNamespace>BindOpenTests.Messages</RootNamespace>
     <PackageProjectUrl>https://github.com/bindopen/BindOpenTests.Messages.Feeds</PackageProjectUrl>

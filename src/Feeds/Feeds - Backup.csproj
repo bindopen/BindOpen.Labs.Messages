@@ -2,16 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <AssemblyName>BindOpen.Plus.Messages.Email</AssemblyName>
-    <PackageId>BindOpen.Plus.Messages.Email</PackageId>
-    <Product>BindOpen.Plus.Messages</Product>
+    <AssemblyName>BindOpen.Pulp.Messages.Feeds</AssemblyName>
+    <PackageId>BindOpen.Pulp.Messages.Feeds</PackageId>
+    <Product>BindOpen.Pulp.Messages</Product>
     <Company>BindOpen</Company>
     <Copyright>Copyright ©BindOpen 2011-2023</Copyright>
-    <Description>A package to send and receive your messages.</Description>
+    <Description>A package to easily deal with feeds.</Description>
     <Authors>Sumer Team</Authors>
-    <RootNamespace>BindOpen.Plus.Messages</RootNamespace>
-    <PackageProjectUrl>https://github.com/bindopen/BindOpen.Plus.Messages</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/bindopen/BindOpen.Plus.Messages.git</RepositoryUrl>
+    <RootNamespace>BindOpen.Pulp.Messages.Feeds</RootNamespace>
+    <PackageProjectUrl>https://github.com/bindopen/BindOpen.Pulp.Messages</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bindopen/BindOpen.Pulp.Messages.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>bindopen_icon.png</PackageIcon>
@@ -21,7 +21,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>BindOpen.Plus.Messages.Email.xml</DocumentationFile>
+    <DocumentationFile>BindOpen.Pulp.Messages.Feeds.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -38,14 +38,10 @@
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
-  
+
   <ItemGroup>
-    <PackageReference Include="BindOpen.Kernel.Scoping.Extensions" Version="1.2.96" />
-    <PackageReference Include="MailKit" Version="4.2.0" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <ProjectReference Include="..\Messages\Messages.csproj" />
+    <ProjectReference Include="..\Abstractions\Abstractions.csproj" />
+    <ProjectReference Include="..\IO.Dtos\IO.Dtos.csproj" />
   </ItemGroup>
 
 </Project>

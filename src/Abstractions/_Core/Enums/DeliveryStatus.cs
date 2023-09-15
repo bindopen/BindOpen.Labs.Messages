@@ -1,4 +1,4 @@
-﻿namespace BindOpen.Labs.Messages.Data.Common
+﻿namespace BindOpen.Plus.Messages.Data.Common
 {
     /// <summary>
     /// This enumeration lists the possible statuses of a send request of a message.

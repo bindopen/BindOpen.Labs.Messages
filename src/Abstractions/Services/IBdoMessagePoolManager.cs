@@ -1,6 +1,6 @@
 ﻿using BindOpen.Kernel.Logging;
 
-namespace BindOpen.Labs.Messages.Services
+namespace BindOpen.Plus.Messages.Services
 {
     /// <summary>
     /// This enumeration lists the possible media used to send a message.

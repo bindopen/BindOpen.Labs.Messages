@@ -1,4 +1,4 @@
-﻿namespace BindOpen.Labs.Messages.Email
+﻿namespace BindOpen.Plus.Messages.Email
 {
     /// <summary>
     /// This class represents an extension of the EmailConnectorKind enumeration.

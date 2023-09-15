@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace BindOpen.Labs.Messages
+namespace BindOpen.Plus.Messages
 {
     /// <summary>
     /// This class represents the delivery method for a message send request.
