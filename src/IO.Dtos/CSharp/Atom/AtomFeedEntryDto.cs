@@ -3,7 +3,7 @@ using BindOpen.Kernel.Data.Helpers;
 using System;
 using System.Xml.Serialization;
 
-namespace BindOpen.Labs.Messages.Atom
+namespace BindOpen.Plus.Messages.Atom
 {
     /// <summary>
     /// This class represents a Atom feed entry.

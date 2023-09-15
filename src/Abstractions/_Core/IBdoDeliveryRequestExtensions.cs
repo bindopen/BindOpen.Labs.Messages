@@ -1,7 +1,7 @@
-﻿using BindOpen.Labs.Messages.Contacts;
+﻿using BindOpen.Plus.Messages.Contacts;
 using System.Linq;
 
-namespace BindOpen.Labs.Messages
+namespace BindOpen.Plus.Messages
 {
     /// <summary>
     /// This class represents the delivery method for a message send request.

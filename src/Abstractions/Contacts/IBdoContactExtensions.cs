@@ -1,4 +1,4 @@
-﻿namespace BindOpen.Labs.Messages.Contacts
+﻿namespace BindOpen.Plus.Messages.Contacts
 {
     /// <summary>
     /// This class represents the delivery method for a message send request.
