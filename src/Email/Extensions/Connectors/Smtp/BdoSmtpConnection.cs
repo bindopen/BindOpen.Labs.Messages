@@ -1,5 +1,4 @@
 ﻿using BindOpen.Kernel.Logging;
-using BindOpen.Kernel.Scoping.Connectors;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -49,14 +48,12 @@ namespace BindOpen.Plus.Messages.Email.Connectors
 
         #endregion
 
-        public override IBdoConnection Connect(IBdoLog log = null)
+        public override void Connect(IBdoLog log = null)
         {
-            return this;
         }
 
-        public override IBdoConnection Disconnect(IBdoLog log = null)
+        public override void Disconnect(IBdoLog log = null)
         {
-            return this;
         }
 
 
