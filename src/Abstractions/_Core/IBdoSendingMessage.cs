@@ -1,7 +1,7 @@
-﻿using BindOpen.Labs.Messages.Contacts;
+﻿using BindOpen.Plus.Messages.Contacts;
 using System.Collections.Generic;
 
-namespace BindOpen.Labs.Messages
+namespace BindOpen.Plus.Messages
 {
     /// <summary>
     /// This class represents the message.

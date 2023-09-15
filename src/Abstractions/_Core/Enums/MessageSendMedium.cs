@@ -1,4 +1,4 @@
-﻿namespace BindOpen.Labs.Messages
+﻿namespace BindOpen.Plus.Messages
 {
     /// <summary>
     /// This enumeration lists the possible media used to send a message.

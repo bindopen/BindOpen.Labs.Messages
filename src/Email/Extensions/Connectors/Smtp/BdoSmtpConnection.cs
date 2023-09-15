@@ -6,7 +6,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
 
-namespace BindOpen.Labs.Messages.Email.Connectors
+namespace BindOpen.Plus.Messages.Email.Connectors
 {
 
     /// <summary>

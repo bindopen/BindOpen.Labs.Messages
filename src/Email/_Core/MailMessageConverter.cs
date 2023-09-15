@@ -2,7 +2,7 @@
 using BindOpen.Kernel.Data.Helpers;
 using System.Net.Mail;
 
-namespace BindOpen.Labs.Messages.Email
+namespace BindOpen.Plus.Messages.Email
 {
     /// <summary>
     /// This class represents the delivery of a to-send message.

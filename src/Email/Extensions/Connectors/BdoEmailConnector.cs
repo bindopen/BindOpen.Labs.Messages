@@ -1,6 +1,6 @@
 ﻿using BindOpen.Kernel.Scoping.Connectors;
 
-namespace BindOpen.Labs.Messages.Email.Connectors
+namespace BindOpen.Plus.Messages.Email.Connectors
 {
 
     /// <summary>

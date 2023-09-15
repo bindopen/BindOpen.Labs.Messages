@@ -4,7 +4,7 @@ using BindOpen.Kernel.Data.Meta;
 using System;
 using System.Collections.Generic;
 
-namespace BindOpen.Labs.Messages
+namespace BindOpen.Plus.Messages
 {
     /// <summary>
     /// This class represents the message.

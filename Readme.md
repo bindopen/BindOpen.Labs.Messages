@@ -1,30 +1,27 @@
-# BindOpen.Kernel
+# BindOpen.Plus.Messages
 
 ![BindOpen logo](https://storage.bindopen.org/img/logos/logo_bindopen.png)
 
 ![Github release version](https://img.shields.io/nuget/v/BindOpen.Kernel.Abstractions.svg?style=plastic)
 
 
-BindOpen is a framework that allows to build widely-extended applications. It enables you to enhance your .NET projects with custom script functions, connectors, entities, and tasks.
+BindOpen is a framework that enables the construction of highly extensible applications. It allows you to enhance your .NET projects with custom script functions, connectors, entities, and tasks.
 
 ## About
 
-BindOpen.Kernel is the kernel of the BindOpen framework. It is composed of the following modules:
+BindOpen.Plus.Messages provides a unified mechanism for sending and receiving messages.
 
-* __System.Data__ offers a comprehensive data model based on metadata.
-* __System.Scoping__ offers an effective mechanism for defining and managing your extensions.
-* [System.Hosting](https://github.com/bindopen/BindOpen.Hosting) allows you to integrate a BindOpen agent within the .NET service builder.
-* [System.Logging](https://github.com/bindopen/BindOpen.Logging) provides a straightforward and multi-dimensional logging system.
-* __System.IO__ provides packages to serialize and deserialize BindOpen.Kernel objects.
+It is composed of the following modules:
 
-This repository contains the System.Data, System.Scoping and System.IO modules. The two other ones are separate repositories.
+* __Messages.Email__ for email messages (supporting Pop3, Smtp and Imap protocoles).
+* __Messages.Feeds__ for feed messages (like Atom).
 
-A [full list of all the repos](https://github.com/bindopen?tab=repositories) is available as well.
+A [full list of all the BindOpen repos](https://github.com/bindopen?tab=repositories) is available as well.
 
 
 ## Install
 
-To get started, install the BindOpen.Kernel module you want to use.
+To get started, install the BindOpen.Plus.Messages module you want to use.
 
 Note: We recommend that later on, you install only the package you need.
 
@@ -32,138 +29,34 @@ Note: We recommend that later on, you install only the package you need.
 
 | Module | Instruction |
 |--------|-----|
-| [BindOpen.Kernel](https://www.nuget.org/packages/BindOpen.Kernel) | ```PM> Install-Package BindOpen.Kernel``` |
-| [BindOpen.Kernel.Scoping](https://www.nuget.org/packages/BindOpen.Kernel.Scoping) | ```PM> Install-Package BindOpen.Kernel.Scoping``` |
-| [BindOpen.Kernel.IO](https://www.nuget.org/packages/BindOpen.Kernel.IO) | ```PM> Install-Package BindOpen.Kernel.IO``` |
+| [BindOpen.Plus.Messages.Email](https://www.nuget.org/packages/BindOpen.Plus.Messages.Email) | ```PM> Install-Package BindOpen.Plus.Messages.Email``` |
+| [BindOpen.Plus.Messages.Feeds](https://www.nuget.org/packages/BindOpen.Plus.Messages.Feeds) | ```PM> Install-Package BindOpen.Plus.Messages.Feeds``` |
 
 ### From .NET CLI
 
 | Module | Instruction |
 |--------|-----|
-| [BindOpen.Kernel](https://www.nuget.org/packages/BindOpen.Kernel) | ```> dotnet add package BindOpen.Kernel``` |
-| [BindOpen.Kernel.Scoping](https://www.nuget.org/packages/BindOpen.Kernel.Scoping) | ```> dotnet add package BindOpen.Kernel.Scoping``` |
-| [BindOpen.Kernel.IO](https://www.nuget.org/packages/BindOpen.Kernel.IO) | ```> dotnet add package BindOpen.Kernel.IO``` |
+| [BindOpen.Plus.Messages.Email](https://www.nuget.org/packages/BindOpen.Plus.Messages.Email) | ```> dotnet add package BindOpen.Plus.Messages.Email``` |
+| [BindOpen.Plus.Messages.Feeds](https://www.nuget.org/packages/BindOpen.Plus.Messages.Feeds) | ```> dotnet add package BindOpen.Plus.Messages.Feeds``` |
 
 ## Get started
 
-### System.Data
-
-#### Metadata
+### Feeds
 
 ```csharp
 var meta = BdoData.NewMeta("host", DataValueTypes.Text, "my-test-host");
 ```
 
-#### Configuration
+### Email
 
 ```csharp
-var config = BdoData.NewConfig(
-        "test-config",
-        BdoData.NewScalar("comment", DataValueTypes.Text, "Sunny day"),
-        BdoData.NewScalar("temperature", DataValueTypes.Integer, 25, 26, 26),
-        BdoData.NewScalar("date", DataValueTypes.Date, DateTime.Now),
-        BdoData.NewNode(
-            "subscriber"
-            BdoData.NewScalar("name", DataValueTypes.Text, "Ernest E."),
-            BdoData.NewScalar("code", DataValueTypes.Integer, 1560))
-    )
-    .WithTitle("Example of configuration")
-    .WithDescription(("en", "This is an example of description"))
-```
-
-### System.Scoping
-
-```csharp
-var scope = BdoScoping.NewScope()
-    .LoadExtensions(q => q.AddAllAssemblies());
-```
-
-#### Script
-
-```csharp
-
-[BdoFunction(
-    Name = "testFunction",
-    Description = "Returns true if second string parameter is the first one ending with underscore")]
-public static object Fun_Func2a(
-    this string st1,
-    string st2)
-{
-    return st1 == st2 + "_";
-}
-
-...
-
-var exp = "$testFunction('MYTABLE', $text('MYTABLE_'))";
-var result = scope.Interpreter.Evaluate<bool?>(exp);
-// result is True
-```
-
-#### Tasks
-
-```csharp
-
-[BdoTask("taskFake")]
-public class TaskFake : BdoTask
-{
-    [BdoProperty(Name = "boolValue")]
-    public bool BoolValue { get; set; }
-
-    [BdoOutput(Name = "stringValue")]
-    public string StringValue { get; set; }
-
-    [BdoInput(Name = "enumValue")]
-    public ActionPriorities EnumValue { get; set; }
-
-    ...
-
-    public override Task<bool> ExecuteAsync(
-        CancellationToken token,
-        IBdoScope scope = null,
-        IBdoMetaSet varSet = null,
-        RuntimeModes runtimeMode = RuntimeModes.Normal,
-        IBdoLog log = null)
-    {
-        ...
-
-        Debug.WriteLine("Task completed");
-
-        return Task.FromResult(true);
-    }
-}
-
-...
-
-var meta = BdoData.NewObject()
-    .WithDataType(BdoExtensionKinds.Task, "bindopen.system.tests$taskFake")
-    .WithProperties(("boolValue", false))
-    .WithInputs(BdoData.NewScalar("enumValue", ActionPriorities.Low))
-    .WithOutputs(("stringValue", "test-out"));
-                    
-var task = scope.CreateTask<TaskFake>(meta);
-var cancelToken = new CancellationTokenSource();
-task.Execute(cancelToken.Token, scope);
-```
-
-### System.IO
-
-#### Serialization
-
-```csharp
-var metaSet = BdoData.NewSet("test-io").With(("host", "host-test"), ("address", "0.0.0.0"));
-metaSet.ToDto().SaveXml("output.xml");
-```
-
-#### Deserialization
-
-```csharp
-var metaSet = JsonHelper.LoadJson<MetaSetDto>("output.xml").ToPoco();
+var meta = BdoData.NewMeta("host", DataValueTypes.Text, "my-test-host");
 ```
 
 
 ## License
 
-This project is licensed under the terms of the MIT license. [See LICENSE](https://github.com/bindopen/BindOpen/blob/master/LICENSE).
+This project is licensed under the terms of the MIT license. [See LICENSE](https://github.com/bindopen/BindOpen.Plus.Messages/blob/master/LICENSE).
 
 ## Packages
 
@@ -171,13 +64,10 @@ This repository contains the code of the following Nuget packages:
 
 | Package | Provision |
 |----------|-----|
-| [BindOpen.Kernel.Abstractions](https://www.nuget.org/packages/BindOpen.Kernel.Abstractions) | Interfaces and enumerations |
-| [BindOpen.Kernel](https://www.nuget.org/packages/BindOpen.Kernel) | Core data model |
-| [BindOpen.Kernel.Scoping](https://www.nuget.org/packages/BindOpen.Kernel.Scoping) | Extension manager |
-| [BindOpen.Kernel.Scoping.Extensions](https://www.nuget.org/packages/BindOpen.Kernel.Scoping.Extensions) | Classes of extensions |
-| [BindOpen.Kernel.Scoping.Script](https://www.nuget.org/packages/BindOpen.Kernel.Scoping.Script) | Script interpreter |
-| [BindOpen.Kernel.IO](https://www.nuget.org/packages/BindOpen.Kernel.IO) | Serialization / Deserialization |
-| [BindOpen.Kernel.IO.Dtos](https://www.nuget.org/packages/BindOpen.Kernel.IO.Dtos) | Data transfer classes |
+| [BindOpen.Plus.Messages](https://www.nuget.org/packages/BindOpen.Plus.Messages) | Core message management |
+| [BindOpen.Plus.Messages.Abstractions](https://www.nuget.org/packages/BindOpen.Plus.Messages.Abstractions) | Interfaces and enumerations |
+| [BindOpen.Plus.Messages.Email](https://www.nuget.org/packages/BindOpen.Plus.Messages.Email) | Email message management |
+| [BindOpen.Plus.Messages.Feeds](https://www.nuget.org/packages/BindOpen.Plus.Messages.Feeds) | Feed message management |
 
 The atomicity of these packages allows you install only what you need respecting your solution's architecture.
 
@@ -186,14 +76,10 @@ All of our NuGet packages are available from [our NuGet.org profile page](https:
 
 ## Other repos and Projects
 
-[BindOpen.Kernel.Hosting](https://github.com/bindopen/BindOpen.Kernel.Hosting) enables you to integrate a BindOpen agent within the .NET service builder.
-
-[BindOpen.Kernel.Logging](https://github.com/bindopen/BindOpen.Kernel.Logging) provides a simple and multidimensional logging system, perfect to monitor nested task executions.
-
-[BindOpen.Labs](https://github.com/bindopen/BindOpen.Labs) is a collection of projects based on BindOpen.Kernel.
+[BindOpen.Plus](https://github.com/bindopen/BindOpen.Plus) is a collection of projects based on BindOpen.Kernel.
 
 
-A [full list of all the repos](https://github.com/bindopen?tab=repositories) is available as well.
+A [full list of all the repos](https://www.nuget.org/packages?q=bindopen.Labs) is available as well.
 
 
 ## Documentation and Further Learning
@@ -213,7 +99,7 @@ The BindOpen Blog is where we announce new features, write engineering blog post
 
 ## Feedback
 
-If you're having trouble with BindOpen, file a bug on the [BindOpen Issue Tracker](https://github.com/bindopen/BindOpen/issues). 
+If you're having trouble with BindOpen, file a bug on the [BindOpen Issue Tracker](https://github.com/bindopen/BindOpen.Plus.Messgaes/issues). 
 
 ## Donation
 

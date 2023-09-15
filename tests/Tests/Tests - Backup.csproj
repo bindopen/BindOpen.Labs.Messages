@@ -2,16 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <AssemblyName>BindOpen.Plus.Messages.Email</AssemblyName>
-    <PackageId>BindOpen.Plus.Messages.Email</PackageId>
-    <Product>BindOpen.Plus.Messages</Product>
+    <AssemblyName>BindOpen.PulpPulp.Messages.Tests</AssemblyName>
+    <PackageId>BindOpen.PulpPulp.Messages.Tests</PackageId>
+    <Product>BindOpen.PulpPulp.Messages</Product>
     <Company>BindOpen</Company>
     <Copyright>Copyright ©BindOpen 2011-2023</Copyright>
-    <Description>A package to send and receive your messages.</Description>
+    <Description>This package conducts unit tests of BindOpen.PulpPulp.Messages.</Description>
     <Authors>Sumer Team</Authors>
-    <RootNamespace>BindOpen.Plus.Messages</RootNamespace>
-    <PackageProjectUrl>https://github.com/bindopen/BindOpen.Plus.Messages</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/bindopen/BindOpen.Plus.Messages.git</RepositoryUrl>
+    <RootNamespace>BindOpenTests.Messages</RootNamespace>
+    <PackageProjectUrl>https://github.com/bindopen/BindOpenTests.Messages.Feeds</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bindopen/BindOpenTests.Messages.Feeds.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>bindopen_icon.png</PackageIcon>
@@ -21,7 +21,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>BindOpen.Plus.Messages.Email.xml</DocumentationFile>
+    <DocumentationFile>BindOpenTests.Messages.Feeds.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -38,14 +38,14 @@
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
-  
+
   <ItemGroup>
-    <PackageReference Include="BindOpen.Kernel.Scoping.Extensions" Version="1.2.96" />
-    <PackageReference Include="MailKit" Version="4.2.0" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
   </ItemGroup>
-  
+
   <ItemGroup>
-    <ProjectReference Include="..\Messages\Messages.csproj" />
+    <ProjectReference Include="..\..\src\Email\Email.csproj" />
+    <ProjectReference Include="..\..\src\Feeds\Feeds.csproj" />
   </ItemGroup>
 
 </Project>

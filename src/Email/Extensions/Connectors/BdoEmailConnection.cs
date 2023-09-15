@@ -1,10 +1,10 @@
 ﻿using BindOpen.Kernel.Logging;
 using BindOpen.Kernel.Scoping.Connectors;
-using BindOpen.Labs.Messages.Services;
+using BindOpen.Plus.Messages.Services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace BindOpen.Labs.Messages.Email.Connectors
+namespace BindOpen.Plus.Messages.Email.Connectors
 {
 
     /// <summary>

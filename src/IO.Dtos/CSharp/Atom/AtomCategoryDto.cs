@@ -1,7 +1,7 @@
 ﻿using BindOpen.Kernel;
 using System.Xml.Serialization;
 
-namespace BindOpen.Labs.Messages.Atom
+namespace BindOpen.Plus.Messages.Atom
 {
     /// <summary>
     /// This class represents an Atom category.

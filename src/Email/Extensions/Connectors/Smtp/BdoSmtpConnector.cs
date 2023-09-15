@@ -3,7 +3,7 @@ using BindOpen.Kernel.Logging;
 using BindOpen.Kernel.Scoping;
 using BindOpen.Kernel.Scoping.Connectors;
 
-namespace BindOpen.Labs.Messages.Email.Connectors
+namespace BindOpen.Plus.Messages.Email.Connectors
 {
     /// <summary>
     /// This class represents a SMTP email connector.

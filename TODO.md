@@ -1,4 +1,4 @@
-Todo list for BindOpen.Labs.Messages
+Todo list for BindOpen.Plus.Messages
 ====
 
 ## Next tasks

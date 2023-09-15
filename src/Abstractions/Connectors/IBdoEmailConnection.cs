@@ -3,7 +3,7 @@ using BindOpen.Kernel.Scoping.Connectors;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace BindOpen.Labs.Messages.Services
+namespace BindOpen.Plus.Messages.Services
 {
     /// <summary>
     /// This enumeration lists the possible media used to send a message.
