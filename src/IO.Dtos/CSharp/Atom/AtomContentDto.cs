@@ -1,4 +1,4 @@
-﻿using BindOpen.Kernel;
+﻿using BindOpen.Kernel.Data;
 using System.Xml.Serialization;
 
 namespace BindOpen.Plus.Messages.Atom
