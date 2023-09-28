@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:dkm="http://www.w3.org/2001/dkm.xsd"
+  targetNamespace="http://www.w3.org/2001/dkm.xsd"
+  elementFormDefault="qualified"
+  >
+
+  <xsd:include schemaLocation="Message.xsd" />
+  <xsd:include schemaLocation="MessageSendRequestDelivery.xsd" />
+
+  <xsd:complexType name="MessageSendRequest" >    
+    <xsd:all>
+      <xsd:element name="message" type="dkm:Message" maxOccurs="1" />
+      <xsd:element name="deliveries" minOccurs="1">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="delivery" type="dkm:MessageSendRequestDelivery" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="maxTryNumber" type="xsd:integer" maxOccurs="1" default="-1" />
+    </xsd:all>
+  </xsd:complexType>
+
+</xsd:schema>
