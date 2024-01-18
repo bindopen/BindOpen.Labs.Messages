@@ -1,7 +1,7 @@
-﻿using BindOpen.Plus.Messages.Contacts;
+﻿using BindOpen.Messages.Contacts;
 using System.Collections.Generic;
 
-namespace BindOpen.Plus.Messages
+namespace BindOpen.Messages
 {
     /// <summary>
     /// This class represents the message.
@@ -43,5 +43,7 @@ namespace BindOpen.Plus.Messages
         /// List of user contacts to send to.
         /// </summary>
         List<IBdoContact> NotificationTo { get; set; }
+
+        string UICulture { get; set; }
     }
 }

@@ -1,7 +1,6 @@
-﻿using BindOpen.Kernel;
-using BindOpen.Kernel.Data;
+﻿using BindOpen.Data;
 
-namespace BindOpen.Plus.Messages.Contacts
+namespace BindOpen.Messages.Contacts
 {
     /// <summary>
     /// This enumeration lists the possible media used to send a message.

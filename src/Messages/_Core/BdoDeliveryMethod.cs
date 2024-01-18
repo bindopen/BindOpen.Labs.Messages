@@ -1,4 +1,4 @@
-﻿namespace BindOpen.Plus.Messages
+﻿namespace BindOpen.Messages
 {
     /// <summary>
     /// This class represents the delivery method for a message send request.

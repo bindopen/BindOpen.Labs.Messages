@@ -1,15 +1,15 @@
-﻿using BindOpen.Kernel;
-using BindOpen.Kernel.Data;
-using BindOpen.Kernel.Data.Meta;
+﻿using BindOpen.Data;
+using BindOpen.Data.Meta;
+using BindOpen.Scoping.Entities;
 using System;
 using System.Collections.Generic;
 
-namespace BindOpen.Plus.Messages
+namespace BindOpen.Messages
 {
     /// <summary>
     /// This class represents the message.
     /// </summary>
-    public class BdoMessage : BdoObject, IBdoMessage
+    public class BdoMessage : BdoEntity, IBdoMessage
     {
         /// <summary>
         /// Subject of this instance.
@@ -37,10 +37,6 @@ namespace BindOpen.Plus.Messages
         public ActionPriorities Priority { get; set; }
 
         public BdoMessage() { }
-
-        // IIdentified
-
-        public string Id { get; set; }
 
         // IReferenced
 

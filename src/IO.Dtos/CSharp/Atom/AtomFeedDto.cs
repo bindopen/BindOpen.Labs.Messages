@@ -1,11 +1,10 @@
-﻿using BindOpen.Kernel;
-using BindOpen.Kernel.Data;
+﻿using BindOpen.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
 
-namespace BindOpen.Plus.Messages.Atom
+namespace BindOpen.Messages.Atom
 {
     /// <summary>
     /// This class represents a Feed channel.

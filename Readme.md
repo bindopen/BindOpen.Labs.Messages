@@ -1,4 +1,4 @@
-# BindOpen.Plus.Messages
+# BindOpen.Messages
 
 ![BindOpen logo](https://storage.bindopen.org/img/logos/logo_bindopen.png)
 
@@ -9,7 +9,7 @@ BindOpen is a framework that enables the construction of highly extensible appli
 
 ## About
 
-BindOpen.Plus.Messages provides a unified mechanism for sending and receiving messages.
+BindOpen.Messages provides a unified mechanism for sending and receiving messages.
 
 It is composed of the following modules:
 
@@ -21,7 +21,7 @@ A [full list of all the BindOpen repos](https://github.com/bindopen?tab=reposito
 
 ## Install
 
-To get started, install the BindOpen.Plus.Messages module you want to use.
+To get started, install the BindOpen.Messages module you want to use.
 
 Note: We recommend that later on, you install only the package you need.
 
@@ -29,15 +29,15 @@ Note: We recommend that later on, you install only the package you need.
 
 | Module | Instruction |
 |--------|-----|
-| [BindOpen.Plus.Messages.Email](https://www.nuget.org/packages/BindOpen.Plus.Messages.Email) | ```PM> Install-Package BindOpen.Plus.Messages.Email``` |
-| [BindOpen.Plus.Messages.Feeds](https://www.nuget.org/packages/BindOpen.Plus.Messages.Feeds) | ```PM> Install-Package BindOpen.Plus.Messages.Feeds``` |
+| [BindOpen.Messages.Email](https://www.nuget.org/packages/BindOpen.Messages.Email) | ```PM> Install-Package BindOpen.Messages.Email``` |
+| [BindOpen.Messages.Feeds](https://www.nuget.org/packages/BindOpen.Messages.Feeds) | ```PM> Install-Package BindOpen.Messages.Feeds``` |
 
 ### From .NET CLI
 
 | Module | Instruction |
 |--------|-----|
-| [BindOpen.Plus.Messages.Email](https://www.nuget.org/packages/BindOpen.Plus.Messages.Email) | ```> dotnet add package BindOpen.Plus.Messages.Email``` |
-| [BindOpen.Plus.Messages.Feeds](https://www.nuget.org/packages/BindOpen.Plus.Messages.Feeds) | ```> dotnet add package BindOpen.Plus.Messages.Feeds``` |
+| [BindOpen.Messages.Email](https://www.nuget.org/packages/BindOpen.Messages.Email) | ```> dotnet add package BindOpen.Messages.Email``` |
+| [BindOpen.Messages.Feeds](https://www.nuget.org/packages/BindOpen.Messages.Feeds) | ```> dotnet add package BindOpen.Messages.Feeds``` |
 
 ## Get started
 
@@ -56,7 +56,7 @@ var meta = BdoData.NewMeta("host", DataValueTypes.Text, "my-test-host");
 
 ## License
 
-This project is licensed under the terms of the MIT license. [See LICENSE](https://github.com/bindopen/BindOpen.Plus.Messages/blob/master/LICENSE).
+This project is licensed under the terms of the MIT license. [See LICENSE](https://github.com/bindopen/BindOpen.Messages/blob/master/LICENSE).
 
 ## Packages
 
@@ -64,10 +64,10 @@ This repository contains the code of the following Nuget packages:
 
 | Package | Provision |
 |----------|-----|
-| [BindOpen.Plus.Messages](https://www.nuget.org/packages/BindOpen.Plus.Messages) | Core message management |
-| [BindOpen.Plus.Messages.Abstractions](https://www.nuget.org/packages/BindOpen.Plus.Messages.Abstractions) | Interfaces and enumerations |
-| [BindOpen.Plus.Messages.Email](https://www.nuget.org/packages/BindOpen.Plus.Messages.Email) | Email message management |
-| [BindOpen.Plus.Messages.Feeds](https://www.nuget.org/packages/BindOpen.Plus.Messages.Feeds) | Feed message management |
+| [BindOpen.Messages](https://www.nuget.org/packages/BindOpen.Messages) | Core message management |
+| [BindOpen.Messages.Abstractions](https://www.nuget.org/packages/BindOpen.Messages.Abstractions) | Interfaces and enumerations |
+| [BindOpen.Messages.Email](https://www.nuget.org/packages/BindOpen.Messages.Email) | Email message management |
+| [BindOpen.Messages.Feeds](https://www.nuget.org/packages/BindOpen.Messages.Feeds) | Feed message management |
 
 The atomicity of these packages allows you install only what you need respecting your solution's architecture.
 
