@@ -1,7 +1,7 @@
-﻿using BindOpen.Kernel.Data;
-using BindOpen.Plus.Messages.Contacts;
+﻿using BindOpen.Data;
+using BindOpen.Messages.Contacts;
 
-namespace BindOpen.Plus.Messages
+namespace BindOpen.Messages
 {
     /// <summary>
     /// This class extends BindOpenHost.

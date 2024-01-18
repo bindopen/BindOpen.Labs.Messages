@@ -6,26 +6,25 @@
     <PackageId>BindOpen.Plus.Messages.Tests</PackageId>
     <Product>BindOpen.Plus.Messages</Product>
     <Company>BindOpen</Company>
-    <Copyright>Copyright ©BindOpen 2011-2023</Copyright>
-    <Description>This package conducts unit tests of BindOpen.Plus.Messages.</Description>
+    <Copyright>Copyright ©BindOpen 2011-2024</Copyright>
+    <Description>This package conducts unit tests of BindOpen.Messages.</Description>
     <Authors>Sumer Team</Authors>
-    <RootNamespace>BindOpenTests.Messages</RootNamespace>
+    <RootNamespace>BindOpen.Plus.Messages.Tests</RootNamespace>
     <PackageProjectUrl>https://github.com/bindopen/BindOpenTests.Messages.Feeds</PackageProjectUrl>
     <RepositoryUrl>https://github.com/bindopen/BindOpenTests.Messages.Feeds.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>bindopen_icon.png</PackageIcon>
     <PackageIconUrl>https://storage.bindopen.org/org/icons/bindopen_icon_64x64.png</PackageIconUrl>
-    <SignAssembly>true</SignAssembly>
-    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>BindOpenTests.Messages.Feeds.xml</DocumentationFile>
+    <DocumentationFile>BindOpenTests.Plus.Messages.Feeds.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\docs\images\bindopen_icon.png">
+    <None Include="..\..\docs\img\bindopen_icon.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
@@ -40,7 +39,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="Bogus" Version="35.4.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="NUnit" Version="4.0.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>

@@ -1,7 +1,7 @@
-﻿using BindOpen.Kernel;
+﻿using BindOpen.Data;
 using System.Collections.Generic;
 
-namespace BindOpen.Plus.Messages
+namespace BindOpen.Messages
 {
     /// <summary>
     /// This class represents the message send request.

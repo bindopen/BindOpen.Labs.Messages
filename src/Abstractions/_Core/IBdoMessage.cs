@@ -1,14 +1,14 @@
-﻿using BindOpen.Kernel;
-using BindOpen.Kernel.Data;
+﻿using BindOpen.Data;
+using BindOpen.Scoping.Entities;
 using System;
 using System.Collections.Generic;
 
-namespace BindOpen.Plus.Messages
+namespace BindOpen.Messages
 {
     /// <summary>
     /// This class represents the message.
     /// </summary>
-    public interface IBdoMessage : IBdoObject, IIdentified, IReferenced, IDated, IBdoDetailed
+    public interface IBdoMessage : IBdoEntity, IReferenced, IDated, IBdoDetailed
     {
         /// <summary>
         /// Subject of this instance.

@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace BindOpen.Plus.Messages.Atom
+namespace BindOpen.Messages.Atom
 {
     /// <summary>
     /// This class represents an Atom link relation.
