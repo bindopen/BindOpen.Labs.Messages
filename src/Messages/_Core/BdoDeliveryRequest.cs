@@ -1,7 +1,7 @@
-﻿using BindOpen.Plus.Messages.Contacts;
+﻿using BindOpen.Messages.Contacts;
 using System.Collections.Generic;
 
-namespace BindOpen.Plus.Messages
+namespace BindOpen.Messages
 {
     /// <summary>
     /// This class represents the delivery of a to-send message.

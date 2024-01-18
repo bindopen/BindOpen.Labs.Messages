@@ -1,15 +1,15 @@
-﻿using BindOpen.Kernel.Data.Meta;
-using BindOpen.Kernel.Logging;
-using BindOpen.Kernel.Scoping;
-using BindOpen.Kernel.Scoping.Connectors;
+﻿using BindOpen.Data.Meta;
+using BindOpen.Logging;
+using BindOpen.Scoping;
+using BindOpen.Scoping.Connectors;
 
-namespace BindOpen.Plus.Messages.Email.Connectors
+namespace BindOpen.Messages.Email.Connectors
 {
     /// <summary>
     /// This class represents a SMTP email connector.
     /// </summary>
     [BdoConnector("messages$smtp")]
-    public class BdoSmtpConnector : BdoEmailConnector
+    public class BdoSmtpConnector : BdoConnector, ITBdoConnector<BdoSmtpConnection>
     {
         // -----------------------------------------------
         // PROPERTIES
@@ -76,6 +76,6 @@ namespace BindOpen.Plus.Messages.Email.Connectors
 
         #endregion
 
-        public override IBdoConnection NewConnection(IBdoLog log = null) => new BdoSmtpConnection(this);
+        public override BdoSmtpConnection NewConnection(IBdoLog log = null) => new BdoSmtpConnection(this);
     }
 }

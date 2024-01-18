@@ -1,13 +1,24 @@
-﻿using BindOpen.Plus.Messages.Contacts;
+﻿using BindOpen.Messages.Contacts;
 using System.Linq;
 
-namespace BindOpen.Plus.Messages
+namespace BindOpen.Messages
 {
     /// <summary>
     /// This class represents the delivery method for a message send request.
     /// </summary>
     public static class IBdoSendingMessageExtensions
     {
+        public static T WithUICulture<T>(this T obj, string uiCulture)
+            where T : IBdoSendingMessage
+        {
+            if (obj != null)
+            {
+                obj.UICulture = uiCulture;
+            }
+
+            return obj;
+        }
+
         /// <summary>
         /// Media of this instance.
         /// </summary>

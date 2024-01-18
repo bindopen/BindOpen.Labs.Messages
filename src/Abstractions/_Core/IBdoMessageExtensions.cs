@@ -1,8 +1,7 @@
-﻿using BindOpen.Kernel;
-using BindOpen.Kernel.Data;
+﻿using BindOpen.Data;
 using System.Linq;
 
-namespace BindOpen.Plus.Messages
+namespace BindOpen.Messages
 {
     /// <summary>
     /// This class represents the delivery method for a message send request.

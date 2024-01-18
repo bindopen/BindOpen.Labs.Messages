@@ -1,13 +1,13 @@
-﻿using BindOpen.Kernel.Data;
-using BindOpen.Kernel.Data.Helpers;
-using BindOpen.Kernel.Logging;
-using BindOpen.Plus.Messages.Atom;
+﻿using BindOpen.Data;
+using BindOpen.Data.Helpers;
+using BindOpen.Logging;
+using BindOpen.Messages.Atom;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace BindOpen.Plus.Messages.Feeds.Atom
+namespace BindOpen.Messages.Feeds.Atom
 {
     /// <summary>
     /// This class represents a RSS loader.

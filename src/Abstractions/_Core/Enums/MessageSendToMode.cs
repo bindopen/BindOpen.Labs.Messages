@@ -1,4 +1,4 @@
-﻿namespace BindOpen.Plus.Messages
+﻿namespace BindOpen.Messages
 {
     /// <summary>
     /// This enumeration lists the possible modes to send a message.
