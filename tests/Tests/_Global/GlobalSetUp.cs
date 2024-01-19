@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System.IO;
 
-namespace BindOpen.Tests.Messages
+namespace BindOpen.Messages.Tests
 {
     /// <summary>
     /// This class set the global setup.

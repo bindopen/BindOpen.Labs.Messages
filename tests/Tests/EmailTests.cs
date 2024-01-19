@@ -1,5 +1,4 @@
 ﻿using BindOpen.Data;
-using BindOpen.Messages;
 using BindOpen.Messages.Contacts;
 using BindOpen.Messages.Email.Connectors;
 using BindOpen.Scoping;
@@ -9,7 +8,7 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
 
-namespace BindOpen.Tests.Messages
+namespace BindOpen.Messages.Tests
 {
     [TestFixture, Order(401)]
     public class EmailTests
