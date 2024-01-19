@@ -40,7 +40,7 @@ namespace BindOpen.Messages.Email
                         }
                     }
 
-                    if (message.ReplyTo?.Count > 0)
+                    if (message.To?.Count > 0)
                     {
                         foreach (var currentContact in message.To)
                         {
