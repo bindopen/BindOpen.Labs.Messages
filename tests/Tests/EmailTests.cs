@@ -1,4 +1,6 @@
 ﻿using BindOpen.Data;
+using BindOpen.Logging;
+using BindOpen.Logging.Loggers;
 using BindOpen.Messages.Contacts;
 using BindOpen.Messages.Email.Connectors;
 using BindOpen.Scoping;
@@ -31,7 +33,7 @@ namespace BindOpen.Messages.Tests
         {
             var config =
                 BdoData.NewObject()
-                .WithDataType(BdoExtensionKinds.Connector, "bindopen.kernel.tests$testConnector")
+                .WithDataType(BdoExtensionKinds.Connector, "BINDOPEN.PLUS.MESSAGES.EMAIL$SMTP")
                 .With(
                     BdoData.NewScalar("host", _testData.host as string),
                     BdoData.NewScalar("port", _testData.port as int?),
@@ -98,14 +100,18 @@ namespace BindOpen.Messages.Tests
 
             // Message without recipient emails
 
+            var log = BdoLogging.NewLog()
+                .WithLogger(BdoLogging.NewLogger<BdoTraceLogger>());
+
             message = BdoMessages.NewSendingMessage("<subject>", "<body>")
-                .WithFrom(BdoMessages.NewContact().WithEmail("toto@gmail.com"));
+                .WithFrom(BdoMessages.NewContact().WithEmail("toto@gmail.com"))
+                .WithTo(BdoMessages.NewContact().WithEmail("titi@gmail.com"));
 
             results = new List<IResultItem>();
-            connector.UsingConnection((conn, log) =>
+            connector.UsingConnection((conn, l) =>
             {
-                results = conn.Push(null, message);
-            });
+                results = conn.Push(l, message);
+            }, log: log);
             Assert.That(results?.FirstOrDefault().Status == ResourceStatus.None, "Bad results");
         }
 

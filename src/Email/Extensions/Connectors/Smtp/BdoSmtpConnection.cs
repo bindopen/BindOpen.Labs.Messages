@@ -94,7 +94,7 @@ namespace BindOpen.Messages.Email.Connectors
                     }
                     catch (Exception ex)
                     {
-                        log?.AddException(ex);
+                        log?.AddEvent(EventKinds.Exception, "Could not send email", ex.ToString());
                     }
                 }
 
