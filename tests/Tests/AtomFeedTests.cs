@@ -1,7 +1,7 @@
 ﻿using BindOpen.Messages.Feeds.Atom;
 using NUnit.Framework;
 
-namespace BindOpen.Tests.Messages
+namespace BindOpen.Messages.Tests
 {
     [TestFixture, Order(401)]
     public class AtomFeedTests

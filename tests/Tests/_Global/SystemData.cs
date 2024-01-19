@@ -3,7 +3,7 @@ using BindOpen.Messages.Email;
 using BindOpen.Scoping;
 using BindOpen.Scoping.Script;
 
-namespace BindOpen.Tests.Messages
+namespace BindOpen.Messages.Tests
 {
     public static class SystemData
     {
