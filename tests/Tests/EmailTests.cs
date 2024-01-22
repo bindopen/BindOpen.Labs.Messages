@@ -26,6 +26,8 @@ namespace BindOpen.Messages.Tests
             _testData.host = f.Internet.IpAddress().ToString();
             _testData.port = 587;
             _testData.isSslEnabled = f.Random.Bool();
+            _testData.login = f.Name.LastName();
+            _testData.password = f.Random.String(12, 'a', 'z');
         }
 
         [Test, Order(1)]
@@ -33,7 +35,7 @@ namespace BindOpen.Messages.Tests
         {
             var config =
                 BdoData.NewObject()
-                .WithDataType(BdoExtensionKinds.Connector, "BINDOPEN.PLUS.MESSAGES.EMAIL$SMTP")
+                .WithDataType(BdoExtensionKinds.Connector, "BINDOPEN.MESSAGES.EMAIL$SMTP")
                 .With(
                     BdoData.NewScalar("host", _testData.host as string),
                     BdoData.NewScalar("port", _testData.port as int?),
@@ -48,7 +50,7 @@ namespace BindOpen.Messages.Tests
         {
             var config =
                 BdoData.NewObject()
-                .WithDataType(BdoExtensionKinds.Connector, "BINDOPEN.PLUS.MESSAGES.EMAIL$SMTP")
+                .WithDataType(BdoExtensionKinds.Connector, "BINDOPEN.MESSAGES.EMAIL$SMTP")
                 .With(
                     BdoData.NewScalar("host", _testData.host as string),
                     BdoData.NewScalar("port", _testData.port as int?),
@@ -83,7 +85,9 @@ namespace BindOpen.Messages.Tests
                 ConnectionString = _testData.connectionString,
                 Host = _testData.host,
                 IsSslEnabled = _testData.isSslEnabled,
-                Port = _testData.port as int?
+                Port = _testData.port as int?,
+                Login = _testData.login,
+                Password = _testData.password
             };
 
             IEnumerable<IResultItem> results = new List<IResultItem>();

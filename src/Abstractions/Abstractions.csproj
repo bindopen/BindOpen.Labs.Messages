@@ -2,9 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <AssemblyName>BindOpen.Plus.Messages.Abstractions</AssemblyName>
-    <PackageId>BindOpen.Plus.Messages.Abstractions</PackageId>
-    <Product>BindOpen.Plus.Messages</Product>
+    <AssemblyName>BindOpen.Messages.Abstractions</AssemblyName>
+    <PackageId>BindOpen.Messages.Abstractions</PackageId>
+    <Product>BindOpen.Messages</Product>
     <Company>BindOpen</Company>
     <Copyright>Copyright ©BindOpen 2011-2024</Copyright>
     <Description>A package to send and receive your messages.</Description>
@@ -21,7 +21,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>BindOpen.Plus.Messages.Abstractions.xml</DocumentationFile>
+    <DocumentationFile>BindOpen.Messages.Abstractions.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -40,7 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BindOpen.Kernel.Abstractions" Version="1.2.163" />
+    <PackageReference Include="BindOpen.Abstractions" Version="1.2.164" />
   </ItemGroup>
 
 </Project>

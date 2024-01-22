@@ -2,9 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <AssemblyName>BindOpen.Plus.Messages</AssemblyName>
-    <PackageId>BindOpen.Plus.Messages</PackageId>
-    <Product>BindOpen.Plus.Messages</Product>
+    <AssemblyName>BindOpen.Messages</AssemblyName>
+    <PackageId>BindOpen.Messages</PackageId>
+    <Product>BindOpen.Messages</Product>
     <Company>BindOpen</Company>
     <Copyright>Copyright ©BindOpen 2011-2024</Copyright>
     <Description>A package to send and receive your messages.</Description>
@@ -20,7 +20,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>BindOpen.Plus.Messages.xml</DocumentationFile>
+    <DocumentationFile>BindOpen.Messages.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,7 +39,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="BindOpen.Kernel.Scoping.Extensions" Version="1.2.163" />
+    <PackageReference Include="BindOpen.Scoping.Extensions" Version="1.2.164" />
   </ItemGroup>
   
   <ItemGroup>
