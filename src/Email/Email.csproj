@@ -2,9 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <AssemblyName>BindOpen.Plus.Messages.Email</AssemblyName>
-    <PackageId>BindOpen.Plus.Messages.Email</PackageId>
-    <Product>BindOpen.Plus.Messages</Product>
+    <AssemblyName>BindOpen.Messages.Email</AssemblyName>
+    <PackageId>BindOpen.Messages.Email</PackageId>
+    <Product>BindOpen.Messages</Product>
     <Company>BindOpen</Company>
     <Copyright>Copyright ©BindOpen 2011-2024</Copyright>
     <Description>A package to send and receive your messages.</Description>
@@ -20,7 +20,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>BindOpen.Plus.Messages.Email.xml</DocumentationFile>
+    <DocumentationFile>BindOpen.Messages.Email.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -40,7 +40,7 @@
   
   <ItemGroup>
     <PackageReference Include="MailKit" Version="4.3.0" />
-    <PackageReference Include="BindOpen.Kernel.Scoping" Version="1.2.163" />
+    <PackageReference Include="BindOpen.Scoping" Version="1.2.164" />
   </ItemGroup>
   
   <ItemGroup>

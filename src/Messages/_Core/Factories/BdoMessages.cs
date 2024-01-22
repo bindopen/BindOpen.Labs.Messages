@@ -8,15 +8,16 @@ namespace BindOpen.Messages
     /// </summary>
     public static class BdoMessages
     {
-        public static T NewContact<T>()
+        public static T NewContact<T>(string name = null)
             where T : IBdoContact, new()
         {
             return BdoData.New<T>();
         }
 
-        public static BdoContact NewContact()
+        public static BdoContact NewContact(string name = null)
         {
-            return BdoData.New<BdoContact>();
+            return BdoData.New<BdoContact>()
+                .WithName(name);
         }
 
         public static T NewMessage<T>(string subject = null, string body = null)

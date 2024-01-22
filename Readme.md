@@ -2,7 +2,7 @@
 
 ![BindOpen logo](https://storage.bindopen.org/img/logos/logo_bindopen.png)
 
-![Github release version](https://img.shields.io/nuget/v/BindOpen.Kernel.Abstractions.svg?style=plastic)
+![Github release version](https://img.shields.io/nuget/v/BindOpen.Messages.svg?style=plastic)
 
 
 BindOpen is a framework that enables the construction of highly extensible applications. It allows you to enhance your .NET projects with custom script functions, connectors, entities, and tasks.
@@ -76,7 +76,7 @@ All of our NuGet packages are available from [our NuGet.org profile page](https:
 
 ## Other repos and Projects
 
-[BindOpen.Plus](https://github.com/bindopen/BindOpen.Plus) is a collection of projects based on BindOpen.Kernel.
+[BindOpen.Plus](https://github.com/bindopen/BindOpen.Plus) is a collection of projects based on BindOpen.
 
 
 A [full list of all the repos](https://www.nuget.org/packages?q=bindopen.Labs) is available as well.

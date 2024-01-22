@@ -2,9 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <AssemblyName>BindOpen.Plus.Messages.IO.Dtos</AssemblyName>
-    <PackageId>BindOpen.Plus.Messages.IO.Dtos</PackageId>
-    <Product>BindOpen.Plus.Messages</Product>
+    <AssemblyName>BindOpen.Messages.IO.Dtos</AssemblyName>
+    <PackageId>BindOpen.Messages.IO.Dtos</PackageId>
+    <Product>BindOpen.Messages</Product>
     <Company>BindOpen</Company>
     <Copyright>Copyright ©BindOpen 2011-2024</Copyright>
     <Description>A package to easily deal with feeds.</Description>
@@ -20,7 +20,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>BindOpen.Plus.Messages.IO.Dtos.xml</DocumentationFile>
+    <DocumentationFile>BindOpen.Messages.IO.Dtos.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,7 +39,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="BindOpen.Kernel.IO.Dtos" Version="1.2.163" />
+    <PackageReference Include="BindOpen.IO.Dtos" Version="1.2.164" />
     <PackageReference Include="MTT" Version="0.7.2" />
   </ItemGroup>
   
