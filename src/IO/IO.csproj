@@ -2,9 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <AssemblyName>BindOpen.Plus.Messages.IO</AssemblyName>
-    <PackageId>BindOpen.Plus.Messages.IO</PackageId>
-    <Product>BindOpen.Plus.Messages</Product>
+    <AssemblyName>BindOpen.Messages.IO</AssemblyName>
+    <PackageId>BindOpen.Messages.IO</PackageId>
+    <Product>BindOpen.Messages</Product>
     <Company>BindOpen</Company>
     <Copyright>Copyright ©BindOpen 2011-2024</Copyright>
     <Description>A package to easily deal with feeds.</Description>
@@ -21,7 +21,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>BindOpen.Plus.Messages.IO.xml</DocumentationFile>
+    <DocumentationFile>BindOpen.Messages.IO.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -40,7 +40,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="BindOpen.Kernel.Scoping.Extensions" Version="1.2.163" />
+    <PackageReference Include="BindOpen.Scoping.Extensions" Version="1.2.164" />
   </ItemGroup>
 
 </Project>
