@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>BindOpen.Messages.Feeds</AssemblyName>
     <PackageId>BindOpen.Messages.Feeds</PackageId>
     <Product>BindOpen.Messages</Product>
