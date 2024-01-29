@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>BindOpen.Messages.Email</AssemblyName>
     <PackageId>BindOpen.Messages.Email</PackageId>
     <Product>BindOpen.Messages</Product>
@@ -40,7 +40,7 @@
   
   <ItemGroup>
     <PackageReference Include="MailKit" Version="4.3.0" />
-    <PackageReference Include="BindOpen.Scoping" Version="1.2.164" />
+    <PackageReference Include="BindOpen.Scoping" Version="1.2.166" />
   </ItemGroup>
   
   <ItemGroup>

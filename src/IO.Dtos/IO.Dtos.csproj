@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>BindOpen.Messages.IO.Dtos</AssemblyName>
     <PackageId>BindOpen.Messages.IO.Dtos</PackageId>
     <Product>BindOpen.Messages</Product>
@@ -39,7 +39,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="BindOpen.IO.Dtos" Version="1.2.164" />
+    <PackageReference Include="BindOpen.IO.Dtos" Version="1.2.166" />
     <PackageReference Include="MTT" Version="0.7.2" />
   </ItemGroup>
   
