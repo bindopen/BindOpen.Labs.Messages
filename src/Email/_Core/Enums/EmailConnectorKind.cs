@@ -1,28 +1,27 @@
-﻿namespace BindOpen.Messages.Email
+﻿namespace BindOpen.Messages.Email;
+
+/// <summary>
+/// This enumeration lists all the possible kinds of email connectors.
+/// </summary>
+public enum EmailConnectorKind
 {
     /// <summary>
-    /// This enumeration lists all the possible kinds of email connectors.
+    /// None.
     /// </summary>
-    public enum EmailConnectorKind
-    {
-        /// <summary>
-        /// None.
-        /// </summary>
-        None,
+    None,
 
-        /// <summary>
-        /// Pop3.
-        /// </summary>
-        Pop3,
+    /// <summary>
+    /// Pop3.
+    /// </summary>
+    Pop3,
 
-        /// <summary>
-        /// Smtp.
-        /// </summary>
-        Smtp,
+    /// <summary>
+    /// Smtp.
+    /// </summary>
+    Smtp,
 
-        /// <summary>
-        /// Imap.
-        /// </summary>
-        Imap
-    }
+    /// <summary>
+    /// Imap.
+    /// </summary>
+    Imap
 }

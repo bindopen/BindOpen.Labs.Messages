@@ -3,64 +3,63 @@ using BindOpen.Messages.Email;
 using BindOpen.Scoping;
 using BindOpen.Scoping.Script;
 
-namespace BindOpen.Messages.Tests
+namespace BindOpen.Messages.Tests;
+
+public static class SystemData
 {
-    public static class SystemData
+    /// <summary>
+    /// The storage URI folder.
+    /// </summary>
+    public static readonly string StorageUri = "https://storage.bindopen.org/";
+
+    static IBdoScope _appScope = null;
+
+    /// <summary>
+    /// The global scope.
+    /// </summary>
+    public static IBdoScope Scope
     {
-        /// <summary>
-        /// The storage URI folder.
-        /// </summary>
-        public static readonly string StorageUri = "https://storage.bindopen.org/";
-
-        static IBdoScope _appScope = null;
-
-        /// <summary>
-        /// The global scope.
-        /// </summary>
-        public static IBdoScope Scope
+        get
         {
-            get
+            if (_appScope == null)
             {
-                if (_appScope == null)
-                {
-                    _appScope = BdoScoping.NewScope();
-                    _appScope.LoadExtensions(q => q.AddEmail());
-                }
-
-                return _appScope;
+                _appScope = BdoScoping.NewScope();
+                _appScope.LoadExtensions(q => q.AddEmail());
             }
+
+            return _appScope;
         }
+    }
 
-        static string _workingFolder;
-        static IBdoScriptInterpreter _scriptInterpreter;
+    static string _workingFolder;
+    static IBdoScriptInterpreter _scriptInterpreter;
 
-        /// <summary>
-        /// The global working folder.
-        /// </summary>
-        public static string WorkingFolder
+    /// <summary>
+    /// The global working folder.
+    /// </summary>
+    public static string WorkingFolder
+    {
+        get
         {
-            get
+            if (_workingFolder == null)
             {
-                if (_workingFolder == null)
-                {
-                    _workingFolder = (FileHelper.GetAppRootFolderPath() + @"temp\").ToPath();
-                }
-
-                return _workingFolder;
+                _workingFolder = (FileHelper.GetAppRootFolderPath() + @"temp\").ToPath();
             }
+
+            return _workingFolder;
         }
+    }
 
-        public static IBdoScriptInterpreter ScriptInterpreter
+    public static IBdoScriptInterpreter ScriptInterpreter
+    {
+        get
         {
-            get
+            if (_scriptInterpreter == null)
             {
-                if (_scriptInterpreter == null)
-                {
-                    _scriptInterpreter = Scope.Interpreter; ;
-                }
-
-                return _scriptInterpreter;
+                _scriptInterpreter = Scope.Interpreter; ;
             }
+
+            return _scriptInterpreter;
         }
     }
 }

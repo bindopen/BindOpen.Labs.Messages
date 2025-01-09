@@ -32,11 +32,11 @@ namespace BindOpen.Messages
 
         // IIdentified
 
-        public string Id { get; set; }
+        public string Identifier { get; set; }
 
         // IReferenced
 
-        public string Key() => Id;
+        public string Key() => Identifier;
 
         // IDated
 

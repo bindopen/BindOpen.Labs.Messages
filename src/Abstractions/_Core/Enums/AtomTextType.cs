@@ -1,21 +1,20 @@
-﻿namespace BindOpen.Messages.Atom
+﻿namespace BindOpen.Messages.Atom;
+
+/// <summary>
+/// This enumeration lists the possible types of Atom texts.
+/// </summary>
+public enum AtomTextType
 {
     /// <summary>
-    /// This enumeration lists the possible types of Atom texts.
+    /// Text.
     /// </summary>
-    public enum AtomTextType
-    {
-        /// <summary>
-        /// Text.
-        /// </summary>
-        text,
-        /// <summary>
-        /// Html.
-        /// </summary>
-        html,
-        /// <summary>
-        /// XHtml.
-        /// </summary>
-        xhtml
-    }
+    text,
+    /// <summary>
+    /// Html.
+    /// </summary>
+    html,
+    /// <summary>
+    /// XHtml.
+    /// </summary>
+    xhtml
 }

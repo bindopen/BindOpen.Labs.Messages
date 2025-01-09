@@ -1,23 +1,23 @@
-﻿namespace BindOpen.Messages.Data.Common
+﻿namespace BindOpen.Messages;
+
+/// <summary>
+/// This enumeration lists the possible statuses of a send request of a message.
+/// </summary>
+public enum DeliveryStatus
 {
     /// <summary>
-    /// This enumeration lists the possible statuses of a send request of a message.
+    /// Queueing.
     /// </summary>
-    public enum DeliveryStatus
-    {
-        /// <summary>
-        /// Queueing.
-        /// </summary>
-        Queueing,
+    Queueing,
 
-        /// <summary>
-        /// Error. An error occured during the last message.
-        /// </summary>
-        Error,
+    /// <summary>
+    /// Error. An error occured during the last message.
+    /// </summary>
+    Error,
 
-        /// <summary>
-        /// Done. The message has been well sent.
-        /// </summary>
-        Done
-    }
+    /// <summary>
+    /// Done. The message has been well sent.
+    /// </summary>
+    Done
 }
+

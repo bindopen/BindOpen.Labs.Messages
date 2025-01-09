@@ -40,7 +40,7 @@ namespace BindOpen.Messages
 
         // IReferenced
 
-        public string Key() => Id;
+        public string Key() => Identifier;
 
         // IDated
 
