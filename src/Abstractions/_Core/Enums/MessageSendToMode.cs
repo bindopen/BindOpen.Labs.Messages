@@ -1,18 +1,17 @@
-﻿namespace BindOpen.Messages
+﻿namespace BindOpen.Messages;
+
+/// <summary>
+/// This enumeration lists the possible modes to send a message.
+/// </summary>
+public enum MessageSendToMode
 {
     /// <summary>
-    /// This enumeration lists the possible modes to send a message.
+    /// Request for sending the message to contacts one by one.
     /// </summary>
-    public enum MessageSendToMode
-    {
-        /// <summary>
-        /// Request for sending the message to contacts one by one.
-        /// </summary>
-        ToOneByOne,
+    ToOneByOne,
 
-        /// <summary>
-        /// Request for sending the message to all the contacts.
-        /// </summary>
-        ToAll,
-    }
+    /// <summary>
+    /// Request for sending the message to all the contacts.
+    /// </summary>
+    ToAll,
 }

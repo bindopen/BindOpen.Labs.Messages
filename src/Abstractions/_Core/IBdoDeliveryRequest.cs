@@ -1,21 +1,20 @@
 ﻿using BindOpen.Messages.Contacts;
 using System.Collections.Generic;
 
-namespace BindOpen.Messages
+namespace BindOpen.Messages;
+
+/// <summary>
+/// This class represents the delivery of a to-send message.
+/// </summary>
+public interface IBdoDeliveryRequest
 {
     /// <summary>
-    /// This class represents the delivery of a to-send message.
+    /// Delivery method of this instance.
     /// </summary>
-    public interface IBdoDeliveryRequest
-    {
-        /// <summary>
-        /// Delivery method of this instance.
-        /// </summary>
-        IBdoDeliveryMethod Method { get; set; }
+    IBdoDeliveryMethod Method { get; set; }
 
-        /// <summary>
-        /// User contact to reach.
-        /// </summary>
-        List<IBdoContact> To { get; set; }
-    }
+    /// <summary>
+    /// User contact to reach.
+    /// </summary>
+    List<IBdoContact> To { get; set; }
 }

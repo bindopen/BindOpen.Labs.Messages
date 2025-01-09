@@ -1,49 +1,48 @@
 ﻿using BindOpen.Messages.Contacts;
 using System.Collections.Generic;
 
-namespace BindOpen.Messages
+namespace BindOpen.Messages;
+
+/// <summary>
+/// This class represents the message.
+/// </summary>
+public interface IBdoSendingMessage : IBdoMessage
 {
+    // Sender
+
     /// <summary>
-    /// This class represents the message.
+    /// User contact that sends.
     /// </summary>
-    public interface IBdoSendingMessage : IBdoMessage
-    {
-        // Sender
+    IBdoContact From { get; set; }
 
-        /// <summary>
-        /// User contact that sends.
-        /// </summary>
-        IBdoContact From { get; set; }
+    /// <summary>
+    /// User contacts can be replied to.
+    /// </summary>
+    List<IBdoContact> ReplyTo { get; set; }
 
-        /// <summary>
-        /// User contacts can be replied to.
-        /// </summary>
-        List<IBdoContact> ReplyTo { get; set; }
+    // Recipients
 
-        // Recipients
+    /// <summary>
+    /// List of user contacts to send to.
+    /// </summary>
+    List<IBdoContact> To { get; set; }
 
-        /// <summary>
-        /// List of user contacts to send to.
-        /// </summary>
-        List<IBdoContact> To { get; set; }
+    /// <summary>
+    /// List of user contacts to send to in copy.
+    /// </summary>
+    List<IBdoContact> Cc { get; set; }
 
-        /// <summary>
-        /// List of user contacts to send to in copy.
-        /// </summary>
-        List<IBdoContact> Cc { get; set; }
+    /// <summary>
+    /// List of user contacts to send to in hidden copy.
+    /// </summary>
+    List<IBdoContact> Bcc { get; set; }
 
-        /// <summary>
-        /// List of user contacts to send to in hidden copy.
-        /// </summary>
-        List<IBdoContact> Bcc { get; set; }
+    // Notification
 
-        // Notification
+    /// <summary>
+    /// List of user contacts to send to.
+    /// </summary>
+    List<IBdoContact> NotificationTo { get; set; }
 
-        /// <summary>
-        /// List of user contacts to send to.
-        /// </summary>
-        List<IBdoContact> NotificationTo { get; set; }
-
-        string UICulture { get; set; }
-    }
+    string UICulture { get; set; }
 }

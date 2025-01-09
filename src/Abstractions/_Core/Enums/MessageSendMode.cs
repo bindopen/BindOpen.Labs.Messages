@@ -1,18 +1,17 @@
-﻿namespace BindOpen.Messages
+﻿namespace BindOpen.Messages;
+
+/// <summary>
+/// This enumeration lists the possible methods to send a message.
+/// </summary>
+public enum MessageSendMode
 {
     /// <summary>
-    /// This enumeration lists the possible methods to send a message.
+    /// The message is sent directly.
     /// </summary>
-    public enum MessageSendMode
-    {
-        /// <summary>
-        /// The message is sent directly.
-        /// </summary>
-        Direct,
+    Direct,
 
-        /// <summary>
-        /// The message is put in the sending pool.
-        /// </summary>
-        SendingPool
-    }
+    /// <summary>
+    /// The message is put in the sending pool.
+    /// </summary>
+    SendingPool
 }

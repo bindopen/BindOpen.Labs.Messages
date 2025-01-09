@@ -21,10 +21,10 @@ namespace BindOpen.Messages.Contacts
 
         // IIdentified Implementation
 
-        public string Id { get; set; }
+        public string Identifier { get; set; }
 
         // IReferenced Implementation
 
-        public string Key() => Id;
+        public string Key() => Identifier;
     }
 }
