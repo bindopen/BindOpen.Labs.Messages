@@ -1,21 +1,20 @@
-﻿namespace BindOpen.Messages.Atom
+﻿namespace BindOpen.Messages.Atom;
+
+/// <summary>
+/// This enumeration lists all the possible kinds of RSS item sorting.
+/// </summary>
+public enum RssItemSortingKind
 {
     /// <summary>
-    /// This enumeration lists all the possible kinds of RSS item sorting.
+    /// No sorting.
     /// </summary>
-    public enum RssItemSortingKind
-    {
-        /// <summary>
-        /// No sorting.
-        /// </summary>
-        None,
-        /// <summary>
-        /// By date.
-        /// </summary>
-        Date,
-        /// <summary>
-        /// By title.
-        /// </summary>
-        Title
-    }
+    None,
+    /// <summary>
+    /// By date.
+    /// </summary>
+    Date,
+    /// <summary>
+    /// By title.
+    /// </summary>
+    Title
 }

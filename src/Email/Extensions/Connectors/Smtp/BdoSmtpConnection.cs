@@ -8,129 +8,128 @@ using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
 
-namespace BindOpen.Messages.Email.Connectors
+namespace BindOpen.Messages.Email.Connectors;
+
+
+/// <summary>
+/// This class defines a email connector.
+/// </summary>
+public class BdoSmtpConnection : BdoConnection, ITBdoConnection<IBdoSendingMessage>
 {
+    private SmtpClient _client;
+
+    // ------------------------------------------
+    // CONSTRUCTORS
+    // ------------------------------------------
+
+    #region Constructors
 
     /// <summary>
-    /// This class defines a email connector.
+    /// Instantiates a new instance of the BdoSmtpConnection class.
     /// </summary>
-    public class BdoSmtpConnection : BdoConnection, ITBdoConnection<IBdoSendingMessage>
+    public BdoSmtpConnection(BdoSmtpConnector connector) : base()
     {
-        private SmtpClient _client;
+        Connector = connector;
 
-        // ------------------------------------------
-        // CONSTRUCTORS
-        // ------------------------------------------
-
-        #region Constructors
-
-        /// <summary>
-        /// Instantiates a new instance of the BdoSmtpConnection class.
-        /// </summary>
-        public BdoSmtpConnection(BdoSmtpConnector connector) : base()
+        if (connector != null)
         {
-            Connector = connector;
-
-            if (connector != null)
+            _client = new SmtpClient
             {
-                _client = new SmtpClient
-                {
-                    DeliveryMethod = SmtpDeliveryMethod.Network,
-                    EnableSsl = connector.IsSslEnabled == true,
-                    Host = connector.Host,
-                    Port = connector.Port ?? 0,
-                    Timeout = connector.Timeout ?? 0,
-                    UseDefaultCredentials = connector.IsDefaultCredentialsUsed == true
-                };
-                if (!string.IsNullOrEmpty(connector.Login) && !string.IsNullOrEmpty(connector.Password))
-                {
-                    _client.Credentials = new NetworkCredential(
-                        connector.Login,
-                        connector.Password);
-                }
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                EnableSsl = connector.IsSslEnabled == true,
+                Host = connector.Host,
+                Port = connector.Port ?? 0,
+                Timeout = connector.Timeout ?? 0,
+                UseDefaultCredentials = connector.IsDefaultCredentialsUsed == true
+            };
+            if (!string.IsNullOrEmpty(connector.Login) && !string.IsNullOrEmpty(connector.Password))
+            {
+                _client.Credentials = new NetworkCredential(
+                    connector.Login,
+                    connector.Password);
             }
         }
+    }
 
-        #endregion
+    #endregion
 
-        public override void Connect(IBdoLog log = null)
+    public override void Connect(IBdoLog log = null)
+    {
+    }
+
+    public override void Disconnect(IBdoLog log = null)
+    {
+    }
+
+    // Pull
+
+    IEnumerable<IBdoSendingMessage> ITBdoConnection<IBdoSendingMessage>.Pull(IBdoMetaSet paramSet, IBdoLog log)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public Task<IEnumerable<IBdoSendingMessage>> PullAsync(IBdoMetaSet paramSet = null, IBdoLog log = null)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    // Push
+
+    public IEnumerable<IResultItem> Push(IBdoLog log, params IBdoSendingMessage[] messages)
+    {
+        var results = new List<IResultItem>();
+
+        foreach (var message in messages)
         {
-        }
+            var mailMessage = message.ToMail(log);
 
-        public override void Disconnect(IBdoLog log = null)
-        {
-        }
+            var status = ResourceStatus.None;
 
-        // Pull
-
-        IEnumerable<IBdoSendingMessage> ITBdoConnection<IBdoSendingMessage>.Pull(IBdoMetaSet paramSet, IBdoLog log)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<IEnumerable<IBdoSendingMessage>> PullAsync(IBdoMetaSet paramSet = null, IBdoLog log = null)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        // Push
-
-        public IEnumerable<IResultItem> Push(IBdoLog log, params IBdoSendingMessage[] messages)
-        {
-            var results = new List<IResultItem>();
-
-            foreach (var message in messages)
+            if (mailMessage != null)
             {
-                var mailMessage = message.ToMail(log);
-
-                var status = ResourceStatus.None;
-
-                if (mailMessage != null)
+                try
                 {
-                    try
-                    {
-                        _client?.Send(mailMessage);
-                        status = ResourceStatus.Created;
-                    }
-                    catch (Exception ex)
-                    {
-                        log?.AddEvent(EventKinds.Exception, "Could not send email", ex.ToString());
-                    }
+                    _client?.Send(mailMessage);
+                    status = ResourceStatus.Created;
                 }
-
-                results.Add(BdoData.NewResultItem(message.Id, status));
+                catch (Exception ex)
+                {
+                    log?.AddEvent(EventKinds.Exception, "Could not send email", ex.ToString());
+                }
             }
 
-            return results;
+            results.Add(BdoData.NewResultItem(message.Identifier, status));
         }
 
-        public async Task<IEnumerable<IResultItem>> PushAsync(IBdoLog log = null, params IBdoSendingMessage[] messages)
+        return results;
+    }
+
+    public async Task<IEnumerable<IResultItem>> PushAsync(IBdoLog log = null, params IBdoSendingMessage[] messages)
+    {
+        var results = new List<IResultItem>();
+
+        foreach (var message in messages)
         {
-            var results = new List<IResultItem>();
+            var mailMessage = message.ToMail(log);
 
-            foreach (var message in messages)
+            var status = ResourceStatus.None;
+
+            if (mailMessage != null)
             {
-                var mailMessage = message.ToMail(log);
-
-                var status = ResourceStatus.None;
-
-                if (mailMessage != null)
+                try
                 {
-                    try
-                    {
-                        await _client?.SendMailAsync(mailMessage);
-                        status = ResourceStatus.Created;
-                    }
-                    catch (Exception ex)
-                    {
-                        log?.AddException(ex);
-                    }
+                    await _client?.SendMailAsync(mailMessage);
+                    status = ResourceStatus.Created;
                 }
-
-                results.Add(BdoData.NewResultItem(message.Id, status));
+                catch (Exception ex)
+                {
+                    log?.AddException(ex);
+                }
             }
 
-            return results;
+            results.Add(BdoData.NewResultItem(message.Identifier, status));
         }
+
+        return results;
     }
 }

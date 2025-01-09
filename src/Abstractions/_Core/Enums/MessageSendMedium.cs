@@ -1,28 +1,27 @@
-﻿namespace BindOpen.Messages
+﻿namespace BindOpen.Messages;
+
+/// <summary>
+/// This enumeration lists the possible media used to send a message.
+/// </summary>
+public enum MessageSendMedium
 {
     /// <summary>
-    /// This enumeration lists the possible media used to send a message.
+    /// The message is sent via email.
     /// </summary>
-    public enum MessageSendMedium
-    {
-        /// <summary>
-        /// The message is sent via email.
-        /// </summary>
-        Email,
+    Email,
 
-        /// <summary>
-        /// The message is sent by sms.
-        /// </summary>
-        Sms,
+    /// <summary>
+    /// The message is sent by sms.
+    /// </summary>
+    Sms,
 
-        /// <summary>
-        /// The message is sent by phone.
-        /// </summary>
-        Vocal,
+    /// <summary>
+    /// The message is sent by phone.
+    /// </summary>
+    Vocal,
 
-        /// <summary>
-        /// The message is sent by fax.
-        /// </summary>
-        Fax
-    }
+    /// <summary>
+    /// The message is sent by fax.
+    /// </summary>
+    Fax
 }

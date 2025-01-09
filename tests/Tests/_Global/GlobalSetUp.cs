@@ -1,30 +1,29 @@
 ﻿using NUnit.Framework;
 using System.IO;
 
-namespace BindOpen.Messages.Tests
+namespace BindOpen.Messages.Tests;
+
+/// <summary>
+/// This class set the global setup.
+/// </summary>
+[SetUpFixture]
+public class GlobalSetUp
 {
     /// <summary>
-    /// This class set the global setup.
+    /// 
     /// </summary>
-    [SetUpFixture]
-    public class GlobalSetUp
+    [OneTimeSetUp]
+    public void OneTimeSetUp()
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        [OneTimeSetUp]
-        public void OneTimeSetUp()
+        // Setup singleton variables for the first time
+
+        var _ = SystemData.Scope;
+
+        // we delete the working folder
+
+        if (Directory.Exists(SystemData.WorkingFolder))
         {
-            // Setup singleton variables for the first time
-
-            var _ = SystemData.Scope;
-
-            // we delete the working folder
-
-            if (Directory.Exists(SystemData.WorkingFolder))
-            {
-                Directory.Delete(SystemData.WorkingFolder, true);
-            }
+            Directory.Delete(SystemData.WorkingFolder, true);
         }
     }
 }
